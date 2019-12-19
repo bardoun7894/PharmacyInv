@@ -69,7 +69,7 @@ Module Module1
                 validateDublicatedEntry = False
                 text.backColor = Color.White
             End If
-            'dldldldlld kkkkkkk
+
             dr.Close()
             cn.Close()
         Catch ex As Exception
