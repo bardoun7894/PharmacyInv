@@ -64,7 +64,7 @@ Module Module1
                 text.backColor = Color.LemonChiffon
 
                 MsgBox("المنتج موجود بالفعل غير المنتج او الباركود")
-                ';lllll
+
             Else
                 validateDublicatedEntry = False
                 text.backColor = Color.White
