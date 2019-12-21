@@ -1,7 +1,7 @@
 ﻿
 Imports MySql.Data.MySqlClient
 
-Public Class frmstockin2
+Public Class frmstockin
     Private Sub DataGridView3_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
 
     End Sub

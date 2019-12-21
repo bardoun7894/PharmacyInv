@@ -29,9 +29,9 @@ Partial Class frmSales
         Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lblInvoice = New System.Windows.Forms.Label()
         Me.pictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.lblSubTotal = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -57,8 +57,10 @@ Partial Class frmSales
         Me.btnSettle = New System.Windows.Forms.Button()
         Me.btnSales = New System.Windows.Forms.Button()
         Me.dataGridView2 = New System.Windows.Forms.DataGridView()
-        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -68,8 +70,7 @@ Partial Class frmSales
         Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.delete = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.lblInvoice = New System.Windows.Forms.Label()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.txtTotal = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         CType(Me.pictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -93,6 +94,17 @@ Partial Class frmSales
         Me.Panel1.Size = New System.Drawing.Size(1500, 45)
         Me.Panel1.TabIndex = 10
         '
+        'lblInvoice
+        '
+        Me.lblInvoice.AutoSize = True
+        Me.lblInvoice.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblInvoice.ForeColor = System.Drawing.Color.White
+        Me.lblInvoice.Location = New System.Drawing.Point(39, 9)
+        Me.lblInvoice.Name = "lblInvoice"
+        Me.lblInvoice.Size = New System.Drawing.Size(143, 29)
+        Me.lblInvoice.TabIndex = 8
+        Me.lblInvoice.Text = "0000000000"
+        '
         'pictureBox2
         '
         Me.pictureBox2.Image = CType(resources.GetObject("pictureBox2.Image"), System.Drawing.Image)
@@ -108,22 +120,11 @@ Partial Class frmSales
         '
         Me.Panel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.BackColor = System.Drawing.Color.Black
-        Me.Panel2.Controls.Add(Me.Label1)
+        Me.Panel2.Controls.Add(Me.txtTotal)
         Me.Panel2.Location = New System.Drawing.Point(1190, 21)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(298, 52)
         Me.Panel2.TabIndex = 11
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(217, 10)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(78, 36)
-        Me.Label1.TabIndex = 12
-        Me.Label1.Text = "0.00"
         '
         'Panel9
         '
@@ -293,7 +294,7 @@ Partial Class frmSales
         Me.lblDate.AutoSize = True
         Me.lblDate.Font = New System.Drawing.Font("Arabic Typesetting", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDate.ForeColor = System.Drawing.Color.White
-        Me.lblDate.Location = New System.Drawing.Point(19, 18)
+        Me.lblDate.Location = New System.Drawing.Point(5, 18)
         Me.lblDate.Name = "lblDate"
         Me.lblDate.Size = New System.Drawing.Size(72, 32)
         Me.lblDate.TabIndex = 12
@@ -470,7 +471,7 @@ Partial Class frmSales
         Me.dataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle14
         Me.dataGridView2.ColumnHeadersHeight = 30
         Me.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column10, Me.Column2, Me.Column4, Me.Column1, Me.Column3, Me.Column5, Me.Column6, Me.Column8, Me.Column9, Me.Column7, Me.delete})
+        Me.dataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column11, Me.Column2, Me.Column10, Me.Column4, Me.Column1, Me.Column3, Me.Column5, Me.Column6, Me.Column8, Me.Column9, Me.Column7, Me.delete})
         DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(253, Byte), Integer))
         DataGridViewCellStyle16.Font = New System.Drawing.Font("Segoe UI Semibold", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -490,12 +491,16 @@ Partial Class frmSales
         Me.dataGridView2.Size = New System.Drawing.Size(1172, 610)
         Me.dataGridView2.TabIndex = 33
         '
-        'Column10
+        'Timer1
         '
-        Me.Column10.HeaderText = "رقم الفاتورة"
-        Me.Column10.MinimumWidth = 6
-        Me.Column10.Name = "Column10"
-        Me.Column10.Width = 125
+        Me.Timer1.Enabled = True
+        '
+        'Column11
+        '
+        Me.Column11.HeaderText = "#"
+        Me.Column11.MinimumWidth = 6
+        Me.Column11.Name = "Column11"
+        Me.Column11.Width = 125
         '
         'Column2
         '
@@ -504,6 +509,13 @@ Partial Class frmSales
         Me.Column2.Name = "Column2"
         Me.Column2.Visible = False
         Me.Column2.Width = 125
+        '
+        'Column10
+        '
+        Me.Column10.HeaderText = "رقم الفاتورة"
+        Me.Column10.MinimumWidth = 6
+        Me.Column10.Name = "Column10"
+        Me.Column10.Width = 125
         '
         'Column4
         '
@@ -579,20 +591,18 @@ Partial Class frmSales
         Me.delete.Name = "delete"
         Me.delete.Width = 6
         '
-        'lblInvoice
+        'txtTotal
         '
-        Me.lblInvoice.AutoSize = True
-        Me.lblInvoice.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblInvoice.ForeColor = System.Drawing.Color.White
-        Me.lblInvoice.Location = New System.Drawing.Point(39, 9)
-        Me.lblInvoice.Name = "lblInvoice"
-        Me.lblInvoice.Size = New System.Drawing.Size(143, 29)
-        Me.lblInvoice.TabIndex = 8
-        Me.lblInvoice.Text = "0000000000"
-        '
-        'Timer1
-        '
-        Me.Timer1.Enabled = True
+        Me.txtTotal.BackColor = System.Drawing.Color.Black
+        Me.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtTotal.Font = New System.Drawing.Font("Microsoft Tai Le", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTotal.ForeColor = System.Drawing.Color.Turquoise
+        Me.txtTotal.Location = New System.Drawing.Point(43, 5)
+        Me.txtTotal.Name = "txtTotal"
+        Me.txtTotal.Size = New System.Drawing.Size(247, 42)
+        Me.txtTotal.TabIndex = 34
+        Me.txtTotal.Text = "0.00"
+        Me.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'frmSales
         '
@@ -645,7 +655,6 @@ Partial Class frmSales
     Friend WithEvents Panel1 As Panel
     Private WithEvents pictureBox2 As PictureBox
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Label1 As Label
     Friend WithEvents Panel9 As Panel
     Friend WithEvents Label8 As Label
     Friend WithEvents Panel10 As Panel
@@ -671,8 +680,11 @@ Partial Class frmSales
     Friend WithEvents btnSettle As Button
     Friend WithEvents btnSales As Button
     Private WithEvents dataGridView2 As DataGridView
-    Friend WithEvents Column10 As DataGridViewTextBoxColumn
+    Friend WithEvents lblInvoice As Label
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents Column11 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column10 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
@@ -682,6 +694,5 @@ Partial Class frmSales
     Friend WithEvents Column9 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
     Friend WithEvents delete As DataGridViewImageColumn
-    Friend WithEvents lblInvoice As Label
-    Friend WithEvents Timer1 As Timer
+    Friend WithEvents txtTotal As TextBox
 End Class

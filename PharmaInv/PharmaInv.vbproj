@@ -187,22 +187,22 @@
     <Compile Include="frmProductList.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmQty.Designer.vb">
+      <DependentUpon>frmQty.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmQty.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmSales.Designer.vb">
       <DependentUpon>frmSales.vb</DependentUpon>
     </Compile>
     <Compile Include="frmSales.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmStock.Designer.vb">
-      <DependentUpon>frmStock.vb</DependentUpon>
+    <Compile Include="frmstockin.Designer.vb">
+      <DependentUpon>frmstockin.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmStock.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmstockin2.Designer.vb">
-      <DependentUpon>frmstockin2.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmstockin2.vb">
+    <Compile Include="frmstockin.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmType.Designer.vb">
@@ -271,14 +271,14 @@
     <EmbeddedResource Include="frmProductList.resx">
       <DependentUpon>frmProductList.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmQty.resx">
+      <DependentUpon>frmQty.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSales.resx">
       <DependentUpon>frmSales.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmStock.resx">
-      <DependentUpon>frmStock.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmstockin2.resx">
-      <DependentUpon>frmstockin2.vb</DependentUpon>
+    <EmbeddedResource Include="frmstockin.resx">
+      <DependentUpon>frmstockin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmType.resx">
       <DependentUpon>frmType.vb</DependentUpon>

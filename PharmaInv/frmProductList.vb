@@ -98,7 +98,7 @@ Public Class frmProductList
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles picStock.Click
         Dim tt As New ToolTip()
         tt.SetToolTip(picStock, "المخزن")
-        With frmstockin2
+        With frmstockin
             .loadRecords()
             .loadStockByHistory()
 

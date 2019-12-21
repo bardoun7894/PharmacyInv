@@ -9,6 +9,7 @@ Module Module1
     Public cn As MySqlConnection
     Public cm As New MySqlCommand
     Public dr As MySqlDataReader
+    Public strUser As String = "mohamed bardouni "  'this is for user we code it later
 
     Public Sub Connection()
         ' Dim cn As New MySqlConnection("server=localhost;user id=root;database=dbphar")
