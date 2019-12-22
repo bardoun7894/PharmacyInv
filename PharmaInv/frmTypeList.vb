@@ -4,7 +4,7 @@ Public Class frmTypeList
 
     Sub deleterow()
         Try
-            If MsgBox("هل تريد حذف هذه البيانات", vbCritical, vbYesNo) = MsgBoxResult.Yes Then
+            If (MsgBox("هل تريد حذف هاته البيانات", vbYesNo + vbQuestion) = vbYes) Then
                 cn.Open()
                 cm = New MySqlCommand("delete from tblType where id = '" & id & "' ", cn)
                 cm.ExecuteNonQuery()

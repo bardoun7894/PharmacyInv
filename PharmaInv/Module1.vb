@@ -10,10 +10,23 @@ Module Module1
     Public cm As New MySqlCommand
     Public dr As MySqlDataReader
     Public strUser As String = "mohamed bardouni "  'this is for user we code it later
-
+    Public Function getVat()
+        Try
+            cn.Open()
+            cm = New MySqlCommand("select * from tblVat ", cn)
+            dr = cm.ExecuteReader
+            dr.Read()
+            If dr.HasRows Then getVat = CDbl(dr.Item("vat").ToString) Else getVat = "0.00"
+            cn.Close()
+            dr.Close()
+            Return getVat
+        Catch ex As Exception
+            cn.Close()
+            dr.Close()
+        End Try
+    End Function
     Public Sub Connection()
         ' Dim cn As New MySqlConnection("server=localhost;user id=root;database=dbphar")
-
         cn = New MySqlConnection
         With cn
             .ConnectionString = "server=localhost;user id=root;database=pharma"

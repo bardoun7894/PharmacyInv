@@ -42,8 +42,6 @@ Public Class frmSales
         Dim _total As Double = 0, i As Integer = 0
         Try
             dataGridView2.Rows.Clear()
-
-
             cn.Open()
             cm = New MySqlCommand("SELECT * FROM `tblCart` as ca inner JOIN `tblproduct` as p on ca.pid=p.id INNER JOIN tblbrand as b on p.bid=b.id INNER JOIN tblclassification as c on p.cid =c.id INNER JOIN tblformulation as f on p.fid=f.id INNER JOIN tblgeneric as g on p.gid=g.id INNER JOIN tbltype as t on p.tid=t.id", cn)
             dr = cm.ExecuteReader
@@ -54,7 +52,11 @@ Public Class frmSales
             End While
             dr.Close()
             cn.Close()
-            txtTotal.Text = _total
+            txtTotal.Text = Format(_total, "#,##0.00")
+            lblSubTotal.Text = txtTotal.Text
+            lblVat.Text = Format(CDbl(lblSubTotal.Text) * getVat(), "#,##0.00")
+            lblDue.Text = Format(txtTotal.Text - lblVat.Text, "#,##0.00")
+            If dataGridView2.Rows.Count > 0 Then btnSettle.Enabled = True Else btnSettle.Enabled = False
 
         Catch ex As Exception
             dr.Close()
@@ -157,6 +159,38 @@ tblformulation as f on p.fid=f.id INNER JOIN tblgeneric as g on p.gid=g.id INNER
     End Sub
 
     Private Sub dataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dataGridView2.CellContentClick
+        Dim colName As String = dataGridView2.Columns(e.ColumnIndex).Name
 
+        If colName = "delete" Then
+            Try
+                If (MsgBox("هل تريد حذف هاته البيانات", vbYesNo + vbQuestion) = vbYes) Then
+                    cn.Open()
+                    cm = New MySqlCommand("delete from tblCart where id = '" + dataGridView2.Rows(e.RowIndex).Cells(1).Value.ToString + "' ", cn)
+                    cm.ExecuteNonQuery()
+                    cn.Close()
+                    MsgBox("تم الحذف بنجاح")
+                End If
+
+            Catch ex As Exception
+                MsgBox(ex.Message And " المرجو الاتصال بالمبرمج لحل المشكل")
+            End Try
+            loadCart()
+
+
+        End If
+    End Sub
+
+    Private Sub btnSettle_Click(sender As Object, e As EventArgs) Handles btnSettle.Click
+        With frmSettle
+            .lblDue.Text = lblDue.Text
+            .lblChange.SelectionStart = 0
+            .lblChange.SelectionLength = .lblChange.Text
+
+
+
+
+            .ShowDialog()
+
+        End With
     End Sub
 End Class

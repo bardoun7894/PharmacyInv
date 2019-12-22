@@ -62,4 +62,17 @@
             .Show()
         End With
     End Sub
+
+    Private Sub vatEdit_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        With frmVat
+
+            .TopLevel = False
+            Panel3.Controls.Clear()
+            Panel3.Controls.Add(frmVat)
+            .BringToFront()
+            .txtVat.Text = getVat()
+
+            .Show()
+        End With
+    End Sub
 End Class

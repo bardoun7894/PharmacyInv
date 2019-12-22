@@ -32,12 +32,12 @@ Partial Class frmGenericList
         Me.Label2 = New System.Windows.Forms.Label()
         Me.pictureBox1 = New System.Windows.Forms.PictureBox()
         Me.dataGridView2 = New System.Windows.Forms.DataGridView()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.edit = New System.Windows.Forms.DataGridViewImageColumn()
         Me.delete = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel5.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -141,14 +141,6 @@ Partial Class frmGenericList
         Me.dataGridView2.Size = New System.Drawing.Size(1258, 635)
         Me.dataGridView2.TabIndex = 21
         '
-        'Panel1
-        '
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel1.Location = New System.Drawing.Point(1263, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(19, 749)
-        Me.Panel1.TabIndex = 20
-        '
         'Column1
         '
         Me.Column1.HeaderText = "#"
@@ -188,6 +180,15 @@ Partial Class frmGenericList
         Me.delete.MinimumWidth = 6
         Me.delete.Name = "delete"
         Me.delete.Width = 6
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel1.Location = New System.Drawing.Point(1263, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(19, 749)
+        Me.Panel1.TabIndex = 20
         '
         'frmGenericList
         '
