@@ -71,6 +71,7 @@ Partial Class frmSettle
         Me.lblDue.ForeColor = System.Drawing.Color.Green
         Me.lblDue.Location = New System.Drawing.Point(41, 24)
         Me.lblDue.Name = "lblDue"
+        Me.lblDue.ReadOnly = True
         Me.lblDue.Size = New System.Drawing.Size(385, 42)
         Me.lblDue.TabIndex = 3
         Me.lblDue.Text = "0.00"
@@ -95,6 +96,7 @@ Partial Class frmSettle
         Me.lblChange.ForeColor = System.Drawing.Color.White
         Me.lblChange.Location = New System.Drawing.Point(41, 192)
         Me.lblChange.Name = "lblChange"
+        Me.lblChange.ReadOnly = True
         Me.lblChange.Size = New System.Drawing.Size(385, 42)
         Me.lblChange.TabIndex = 5
         Me.lblChange.Text = "0.00"

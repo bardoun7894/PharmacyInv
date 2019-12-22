@@ -182,11 +182,8 @@ tblformulation as f on p.fid=f.id INNER JOIN tblgeneric as g on p.gid=g.id INNER
 
     Private Sub btnSettle_Click(sender As Object, e As EventArgs) Handles btnSettle.Click
         With frmSettle
+
             .lblDue.Text = lblDue.Text
-            .lblChange.SelectionStart = 0
-            .lblChange.SelectionLength = .lblChange.Text
-
-
 
 
             .ShowDialog()

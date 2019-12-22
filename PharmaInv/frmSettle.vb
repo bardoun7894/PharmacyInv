@@ -4,7 +4,9 @@
 Public Class frmSettle
     Private Sub frmSettle_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.KeyPreview = True
-        txtCash.Focus()
+        txtCash.Select()
+
+
 
     End Sub
 
@@ -13,7 +15,7 @@ Public Class frmSettle
             Case 48 To 58
             Case 8
             Case 13
-                settlePayment()
+
             Case Else
                 e.Handled = True
         End Select
@@ -27,7 +29,7 @@ Public Class frmSettle
 
         Try
             If CDbl(lblDue.Text) > CDbl(txtCash.Text) Then
-                MsgBox("Insuffisant amount ! please input a correct amount ")
+                MsgBox("المبلغ غير كافي !المرجو ادخال المبلغ الصحيح")
                 Return
 
             End If
@@ -49,7 +51,6 @@ Public Class frmSettle
                 End With
 
             End If
-            Me.Dispose()
 
 
         Catch ex As Exception
@@ -59,7 +60,7 @@ Public Class frmSettle
         End Try
 
         cn.Close()
-        MsgBox("Payment has been successfully saved")
+        MsgBox("تمت عملية البيع بنجاح")
 
 
     End Sub
@@ -77,4 +78,26 @@ Public Class frmSettle
         End Try
     End Sub
 
+    Private Sub frmSettle_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+
+        Select Case e.KeyCode
+
+            Case Keys.Escape
+
+                Me.Dispose()
+
+            Case Keys.Enter
+                settlePayment()
+                With frmSales
+
+
+                    .txtSearch.Clear()
+                    .txtSearch.Enabled = True
+                    .txtSearch.Focus()
+                End With
+                Me.Dispose()
+
+
+        End Select
+    End Sub
 End Class

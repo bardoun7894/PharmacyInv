@@ -29,12 +29,46 @@ Public Class frmQty
         End Select
 
     End Sub
+    Function getStockAvailable(ByVal sql As String)
+
+        cn.Open()
+        cm = New MySqlCommand(sql, cn)
+        dr = cm.ExecuteReader
+        dr.Read()
+        If dr.HasRows Then
+            getStockAvailable = CInt(dr.Item("qty").ToString)
+        Else
+            getStockAvailable = 0
+
+        End If
+
+        dr.Close()
+        cn.Close()
+        Return getStockAvailable
+
+    End Function
     Sub addToCart()
         Dim sdate As String = Now.ToString("yyyy-MM-dd")
 
 
         Try
             If txtQty.Text = String.Empty Or txtQty.Text = 0 Then Return
+            cn.Open()
+            cm = New MySqlCommand("select * from tblProduct where id like '" & CInt(lblPid.Text) & "' and  qty like'" & CInt(txtQty.Text) & "'", cn)
+            dr = cm.ExecuteReader
+            dr.Read()
+            If dr.HasRows Then
+                cn.Close()
+                dr.Close()
+            Else
+                MsgBox("الكمية نفذت ,فقط " & getStockAvailable("select * from tblProduct where id like '" & CInt(lblPid.Text) & "'") & " وحدات باقية")
+                dr.Close()
+                cn.Close()
+                Return
+
+            End If
+
+
 
 
             cn.Open()
