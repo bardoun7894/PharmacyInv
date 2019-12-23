@@ -440,4 +440,8 @@ Public Class frmProduct
         Me.Dispose()
 
     End Sub
+
+    Private Sub txtPrice_TextChanged(sender As Object, e As EventArgs) Handles txtPrice.TextChanged
+
+    End Sub
 End Class

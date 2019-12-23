@@ -84,15 +84,10 @@ Public Class frmProductList
 
             Next
             dr.Close()
-                cn.Close()
+            cn.Close()
         Catch ex As Exception
             MsgBox(ex.Message)
-
-
         End Try
-
-
-
     End Sub
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles picStock.Click
@@ -101,7 +96,7 @@ Public Class frmProductList
         With frmstockin
             .loadRecords()
             .loadStockByHistory()
-
+            .cboFilter.Text = "الباركود"
             .ShowDialog()
 
         End With

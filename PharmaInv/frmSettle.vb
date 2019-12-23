@@ -26,7 +26,6 @@ Public Class frmSettle
     Sub settlePayment()
 
         Dim sdate As String = Now.ToString("yyyy-MM-dd")
-
         Try
             If CDbl(lblDue.Text) > CDbl(txtCash.Text) Then
                 MsgBox("المبلغ غير كافي !المرجو ادخال المبلغ الصحيح")
@@ -46,21 +45,26 @@ Public Class frmSettle
                     cm.Parameters.AddWithValue("@user", strUser)
                     cm.ExecuteNonQuery()
                     cn.Close()
+                    minusStockQty()
                     .lblInvoice.Text = .getInvoiceNo
 
                 End With
 
             End If
 
+            With frmProductList
+                .loadRecords()
+            End With
 
+            cn.Close()
+            MsgBox("تمت عملية البيع بنجاح")
         Catch ex As Exception
             MsgBox(ex.Message)
             cn.Close()
 
         End Try
 
-        cn.Close()
-        MsgBox("تمت عملية البيع بنجاح")
+
 
 
     End Sub
@@ -100,4 +104,33 @@ Public Class frmSettle
 
         End Select
     End Sub
+    Sub minusStockQty()
+        Try
+
+
+            With frmSales
+
+                For i = 0 To .dataGridView2.Rows.Count - 1
+                    cn.Open()
+                    cm = New MySqlCommand("update tblProduct set qty =qty -'" & CInt(.dataGridView2.Rows(i).Cells(10).Value.ToString) & "' where id like '" & CInt(.dataGridView2.Rows(i).Cells(2).Value.ToString) & "'", cn)
+                    cm.ExecuteNonQuery()
+                    cn.Close()
+
+
+                Next
+
+                cn.Open()
+
+                cm = New MySqlCommand("update tblCart set status ='Sold' where invoice = '" & Trim(.lblInvoice.Text) & "' ", cn)
+                cm.ExecuteNonQuery()
+
+                cn.Close()
+            End With
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+
+        End Try
+    End Sub
+
 End Class

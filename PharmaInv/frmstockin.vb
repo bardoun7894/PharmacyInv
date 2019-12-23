@@ -9,7 +9,6 @@ Public Class frmstockin
         DataGridView4.Rows.Clear()
         Dim i As Integer = 0
         Dim tc As String = ""
-
         Select Case cboFilter.Text
             Case "اسم الشعار"
                 tc = "brand"
@@ -140,7 +139,13 @@ Public Class frmstockin
 
             Next
 
-            If add_rec = True Then MsgBox("تمت الاضافة بنجاح")
+            If add_rec = True Then
+                MsgBox("تمت الاضافة بنجاح")
+                With frmProductList
+                    .loadRecords()
+
+                End With
+            End If
 
 
 

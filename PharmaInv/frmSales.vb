@@ -3,12 +3,15 @@
 Imports MySql.Data.MySqlClient
 Public Class frmSales
     Private Sub frmSales_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        loadCart()
+
         lblInvoice.Enabled = True
         lblInvoice.Text = getInvoiceNo()
         cboFilter.Text = "الباركود"
         txtSearch.Enabled = True
+        txtSearch.Select()
+
         txtSearch.Focus()
+
     End Sub
 
     Private Sub MetroComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboFilter.SelectedIndexChanged
@@ -47,7 +50,7 @@ Public Class frmSales
             dr = cm.ExecuteReader
             While dr.Read
                 i += 1
-                dataGridView2.Rows.Add(i, dr.Item("id").ToString, dr.Item("invoice"), dr.Item("brand"), dr.Item("generic").ToString, dr.Item("classification").ToString, dr.Item("type").ToString, dr.Item("formulation").ToString, dr.Item("price").ToString, dr.Item("qty").ToString, dr.Item("total").ToString)
+                dataGridView2.Rows.Add(i, dr.Item("id").ToString, dr.Item("pid").ToString, dr.Item("invoice"), dr.Item("brand"), dr.Item("generic").ToString, dr.Item("classification").ToString, dr.Item("type").ToString, dr.Item("formulation").ToString, dr.Item("price").ToString, dr.Item("qty").ToString, dr.Item("total").ToString)
                 _total += CDbl(dr.Item("total").ToString)
             End While
             dr.Close()

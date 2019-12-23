@@ -77,7 +77,7 @@ Module Module1
                 validateDublicatedEntry = True
                 text.backColor = Color.LemonChiffon
 
-                MsgBox("المنتج موجود بالفعل غير المنتج او الباركود")
+                MsgBox("البيانات موجودة بالفعل, حاول مجددا ")
 
             Else
                 validateDublicatedEntry = False

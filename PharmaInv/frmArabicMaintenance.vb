@@ -75,4 +75,15 @@
             .Show()
         End With
     End Sub
+
+    Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
+        With frmDiscount
+            .TopLevel = False
+            Panel3.Controls.Clear()
+            Panel3.Controls.Add(frmDiscount)
+            .BringToFront()
+            .loadDiscounts()
+            .Show()
+        End With
+    End Sub
 End Class

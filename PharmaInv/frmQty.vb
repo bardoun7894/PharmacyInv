@@ -9,6 +9,8 @@ Public Class frmQty
         txtQty.SelectionStart = 0
         txtQty.SelectionLength = txtQty.Text.Length
 
+
+
     End Sub
 
     Private Sub frmQty_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
@@ -29,54 +31,52 @@ Public Class frmQty
         End Select
 
     End Sub
-    Function getStockAvailable(ByVal sql As String)
-
+    Function getStockAvailable() As Integer
         cn.Open()
-        cm = New MySqlCommand(sql, cn)
+
+        cm = New MySqlCommand("select * from tblProduct where id like'" & CInt(lblPid.Text) & "'", cn)
         dr = cm.ExecuteReader
         dr.Read()
         If dr.HasRows Then
             getStockAvailable = CInt(dr.Item("qty").ToString)
+
         Else
             getStockAvailable = 0
 
         End If
-
-        dr.Close()
         cn.Close()
-        Return getStockAvailable
+        dr.Close()
 
+        Return getStockAvailable
     End Function
+
+    'i stopped here where error open connection
     Sub addToCart()
         Dim sdate As String = Now.ToString("yyyy-MM-dd")
-
-
+        Dim i As Integer = 0
         Try
             If txtQty.Text = String.Empty Or txtQty.Text = 0 Then Return
             cn.Open()
-            cm = New MySqlCommand("select * from tblProduct where id like '" & CInt(lblPid.Text) & "' and  qty like'" & CInt(txtQty.Text) & "'", cn)
+            cm = Nothing
+            cm = New MySqlCommand("select * from tblProduct where id like '" & CInt(lblPid.Text) & "' and  qty >= '" & CInt(txtQty.Text) & "'", cn)
             dr = cm.ExecuteReader
             dr.Read()
             If dr.HasRows Then
                 cn.Close()
                 dr.Close()
             Else
-                MsgBox("الكمية نفذت ,فقط " & getStockAvailable("select * from tblProduct where id like '" & CInt(lblPid.Text) & "'") & " وحدات باقية")
-                dr.Close()
                 cn.Close()
+                dr.Close()
+                i = getStockAvailable()
+                MsgBox("الكمية نفذت ,فقط " & i & " وحدات باقية")
                 Return
-
             End If
-
-
-
+            cn.Close()
 
             cn.Open()
             cm = Nothing
             cm = New MySqlCommand("insert into tblcart ( invoice,pid,price,qty,sdate,user)values( @invoice,@pid,@price,@qty,@sdate,@user ) ", cn)
             With frmSales
-
-
                 cm.Parameters.AddWithValue("@invoice", .lblInvoice.Text)
                 cm.Parameters.AddWithValue("@pid", CInt(lblPid.Text))
                 cm.Parameters.AddWithValue("@price", CDbl(lblPrice.Text))
@@ -94,7 +94,6 @@ Public Class frmQty
                 .txtSearch.SelectionStart = 0
                 .txtSearch.SelectionLength = txtQty.Text.Length
                 .txtSearch.Enabled = False
-
                 .loadCart()
             End With
 
@@ -104,6 +103,8 @@ Public Class frmQty
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
             cn.Close()
+            dr.Close()
+
 
         End Try
     End Sub

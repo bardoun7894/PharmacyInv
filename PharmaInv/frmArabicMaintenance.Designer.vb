@@ -26,7 +26,6 @@ Partial Class frmArabicMaintenance
         Me.panel1 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -40,6 +39,8 @@ Partial Class frmArabicMaintenance
         Me.label1 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -48,14 +49,16 @@ Partial Class frmArabicMaintenance
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'panel1
         '
         Me.panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(171, Byte), Integer), CType(CType(160, Byte), Integer))
+        Me.panel1.Controls.Add(Me.Label8)
+        Me.panel1.Controls.Add(Me.PictureBox7)
         Me.panel1.Controls.Add(Me.Label2)
         Me.panel1.Controls.Add(Me.PictureBox2)
-        Me.panel1.Controls.Add(Me.FlowLayoutPanel1)
         Me.panel1.Controls.Add(Me.Label7)
         Me.panel1.Controls.Add(Me.PictureBox6)
         Me.panel1.Controls.Add(Me.Label6)
@@ -79,28 +82,21 @@ Partial Class frmArabicMaintenance
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Arabic Typesetting", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(356, 60)
+        Me.Label2.Location = New System.Drawing.Point(400, 60)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(140, 27)
+        Me.Label2.Size = New System.Drawing.Size(95, 27)
         Me.Label2.TabIndex = 29
-        Me.Label2.Text = "تعديل الضريبة المضافة"
+        Me.Label2.Text = "تعديل الضريبة"
         '
         'PictureBox2
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(398, 6)
+        Me.PictureBox2.Location = New System.Drawing.Point(415, 6)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(68, 54)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 28
         Me.PictureBox2.TabStop = False
-        '
-        'FlowLayoutPanel1
-        '
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(979, 79)
-        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(200, 100)
-        Me.FlowLayoutPanel1.TabIndex = 27
         '
         'Label7
         '
@@ -170,7 +166,7 @@ Partial Class frmArabicMaintenance
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Arabic Typesetting", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(506, 62)
+        Me.Label4.Location = New System.Drawing.Point(516, 62)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(57, 27)
         Me.Label4.TabIndex = 20
@@ -179,7 +175,7 @@ Partial Class frmArabicMaintenance
         'PictureBox3
         '
         Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(502, 5)
+        Me.PictureBox3.Location = New System.Drawing.Point(512, 5)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(61, 54)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -237,6 +233,27 @@ Partial Class frmArabicMaintenance
         Me.Panel2.Size = New System.Drawing.Size(1240, 805)
         Me.Panel2.TabIndex = 15
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Arabic Typesetting", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.White
+        Me.Label8.Location = New System.Drawing.Point(289, 60)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(114, 27)
+        Me.Label8.TabIndex = 31
+        Me.Label8.Text = "تعديل التخفيضات"
+        '
+        'PictureBox7
+        '
+        Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
+        Me.PictureBox7.Location = New System.Drawing.Point(313, 6)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(68, 54)
+        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox7.TabIndex = 30
+        Me.PictureBox7.TabStop = False
+        '
         'frmArabicMaintenance
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -256,6 +273,7 @@ Partial Class frmArabicMaintenance
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -274,7 +292,8 @@ Partial Class frmArabicMaintenance
     Private WithEvents label1 As Label
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
     Friend WithEvents Label2 As Label
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents PictureBox7 As PictureBox
 End Class
