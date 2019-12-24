@@ -93,7 +93,8 @@ Public Class frmQty
                 .txtSearch.Focus()
                 .txtSearch.SelectionStart = 0
                 .txtSearch.SelectionLength = txtQty.Text.Length
-                .txtSearch.Enabled = False
+                .txtSearch.Clear()
+
                 .loadCart()
             End With
 

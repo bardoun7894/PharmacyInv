@@ -53,17 +53,20 @@ Public Class frmBrandList
     Private Sub dataGridView2_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles dataGridView2.CellContentClick
         Dim colName As String = dataGridView2.Columns(e.ColumnIndex).Name
         If colName = "edit" Then
-            With frmBrand
-                .labelId.Text = id
-                .txtBrand.Text = _brand
-                .btnSave.Hide()
-                .btnUpdate.Show()
-                .ShowDialog()
-                loadRecords()
+            If (MsgBox("هل تريد تعديل هاته البيانات", vbYesNo + vbQuestion) = vbYes) Then
+                With frmBrand
+                    .labelId.Text = id
+                    .txtBrand.Text = _brand
+                    .btnSave.Hide()
+                    .btnUpdate.Show()
+                    .ShowDialog()
+                    loadRecords()
 
 
-            End With
+                End With
+            End If
         End If
+
         If colName = "delete" Then
 
             deleterow()

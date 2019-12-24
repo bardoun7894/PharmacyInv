@@ -62,17 +62,20 @@ Public Class frmTypeList
     Private Sub dataGridView2_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dataGridView2.CellClick
         Dim colName As String = dataGridView2.Columns(e.ColumnIndex).Name
         If colName = "edit" Then
-            With frmType
-                .labelId.Text = id
-                .txtType.Text = _type
-                .btnSave.Hide()
-                .btnUpdate.Show()
-                .ShowDialog()
-                loadRecords()
+            If (MsgBox("هل تريد تعديل هاته البيانات", vbYesNo + vbQuestion) = vbYes) Then
+                With frmType
+                    .labelId.Text = id
+                    .txtType.Text = _type
+                    .btnSave.Hide()
+                    .btnUpdate.Show()
+                    .ShowDialog()
+                    loadRecords()
 
 
-            End With
+                End With
+            End If
         End If
+
         If colName = "delete" Then
 
             deleterow()

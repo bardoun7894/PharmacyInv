@@ -68,14 +68,17 @@ Public Class frmClassificationList
     Private Sub dataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dataGridView2.CellContentClick
         Dim colName As String = dataGridView2.Columns(e.ColumnIndex).Name
         If colName = "edit" Then
-            With frmClassification
-                .labelId.Text = id
-                .txtClassification.Text = _category
-                .btnSave.Hide()
-                .btnUpdate.Show()
-                .ShowDialog()
-            End With
+            If (MsgBox("هل تريد تعديل هاته البيانات", vbYesNo + vbQuestion) = vbYes) Then
+                With frmClassification
+                    .labelId.Text = id
+                    .txtClassification.Text = _category
+                    .btnSave.Hide()
+                    .btnUpdate.Show()
+                    .ShowDialog()
+                End With
+            End If
         End If
+
         If colName = "delete" Then
             deleterow()
 

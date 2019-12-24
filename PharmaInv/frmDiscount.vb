@@ -3,6 +3,7 @@ Imports MySql.Data.MySqlClient
 
 Public Class frmDiscount
 
+    Dim id As Integer = 0
 
     Private Sub TextBox1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDiscount.KeyPress
         Select Case Asc(e.KeyChar)
@@ -55,13 +56,10 @@ Public Class frmDiscount
                 .ExecuteNonQuery()
 
             End With
-
             cn.Close()
-
             MsgBox("تم اضافة التخفيضات بنجاح")
             loadDiscounts()
             clearDiscount()
-
         Catch ex As Exception
             MsgBox(ex.Message)
             cn.Close()
@@ -70,7 +68,37 @@ Public Class frmDiscount
     End Sub
 
     Private Sub dataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dataGridView2.CellContentClick
+        Try
 
+            Dim colName As String = dataGridView2.Columns(e.ColumnIndex).Name
+
+            If colName = "edit" Then
+                If (MsgBox("هل تريد تعديل هاته البيانات", vbYesNo + vbQuestion) = vbYes) Then
+                    txtdescDisc.Text = dataGridView2.Rows(e.RowIndex).Cells(2).Value.ToString
+                    txtDiscount.Text = dataGridView2.Rows(e.RowIndex).Cells(3).Value.ToString
+                    id = CInt(dataGridView2.Rows(e.RowIndex).Cells(1).Value.ToString)
+                    btnUpdate.Enabled = True
+                    btnSave.Enabled = False
+                End If
+            End If
+
+            If colName = "delete" Then
+                id = CInt(dataGridView2.Rows(e.RowIndex).Cells(1).Value.ToString)
+                If (MsgBox("هل تريد حذف هاته البيانات", vbYesNo + vbQuestion) = vbYes) Then
+                    cn.Open()
+                    cm = New MySqlCommand("delete from tbldiscount where id like '" & id & "'", cn)
+                    cm.ExecuteNonQuery()
+                    cn.Close()
+                    loadDiscounts()
+                    MsgBox("تم الحذف  ")
+
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            cn.Close()
+
+        End Try
     End Sub
 
     Sub clearDiscount()
@@ -82,6 +110,29 @@ Public Class frmDiscount
     End Sub
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         clearDiscount()
+
+
+    End Sub
+
+    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
+
+        Try
+            cn.Open()
+            cm = New MySqlCommand("update tblDiscount set description =@description , discount = @discount WHERE id like '" & id & "'", cn)
+            cm.Parameters.AddWithValue("@description", txtdescDisc.Text)
+            cm.Parameters.AddWithValue("@discount", CDbl(txtDiscount.Text))
+            cm.ExecuteNonQuery()
+            MsgBox("تم تعديل البيانات بنجاح")
+            txtdescDisc.Clear()
+            txtDiscount.Clear()
+            btnUpdate.Enabled = False
+            btnSave.Enabled = True
+            cn.Close()
+            loadDiscounts()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            cn.Close()
+        End Try
 
 
     End Sub

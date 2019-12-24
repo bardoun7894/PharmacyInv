@@ -121,6 +121,12 @@
     <Compile Include="arabicMain.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmChooseDiscount.Designer.vb">
+      <DependentUpon>frmChooseDiscount.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmChooseDiscount.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmArabicMaintenance.Designer.vb">
       <DependentUpon>frmArabicMaintenance.vb</DependentUpon>
     </Compile>
@@ -137,6 +143,12 @@
       <DependentUpon>frmBrandList.vb</DependentUpon>
     </Compile>
     <Compile Include="frmBrandList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDailySales.Designer.vb">
+      <DependentUpon>frmDailySales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDailySales.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmDiscount.Designer.vb">
@@ -256,6 +268,9 @@
     <EmbeddedResource Include="arabicMain.resx">
       <DependentUpon>arabicMain.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmChooseDiscount.resx">
+      <DependentUpon>frmChooseDiscount.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmArabicMaintenance.resx">
       <DependentUpon>frmArabicMaintenance.vb</DependentUpon>
     </EmbeddedResource>
@@ -264,6 +279,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBrandList.resx">
       <DependentUpon>frmBrandList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDailySales.resx">
+      <DependentUpon>frmDailySales.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDiscount.resx">
       <DependentUpon>frmDiscount.vb</DependentUpon>

@@ -69,14 +69,17 @@ Public Class frmFormulationList
     Private Sub dataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dataGridView2.CellContentClick
         Dim colName As String = dataGridView2.Columns(e.ColumnIndex).Name
         If colName = "edit" Then
-            With frmFormulation
-                .labelId.Text = id
-                .txtFormulation.Text = _formulation
-                .btnSave.Hide()
-                .btnUpdate.Show()
-                .ShowDialog()
-            End With
+            If (MsgBox("هل تريد تعديل هاته البيانات", vbYesNo + vbQuestion) = vbYes) Then
+                With frmFormulation
+                    .labelId.Text = id
+                    .txtFormulation.Text = _formulation
+                    .btnSave.Hide()
+                    .btnUpdate.Show()
+                    .ShowDialog()
+                End With
+            End If
         End If
+
         If colName = "delete" Then
 
             deleterow()

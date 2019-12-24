@@ -19,7 +19,11 @@ Public Class frmSales
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles btnSales.Click
+        With frmDailySales
+            .loadDailySales()
+            .ShowDialog()
 
+        End With
     End Sub
 
     Private Sub pictureBox2_Click(sender As Object, e As EventArgs) Handles pictureBox2.Click
@@ -46,7 +50,7 @@ Public Class frmSales
         Try
             dataGridView2.Rows.Clear()
             cn.Open()
-            cm = New MySqlCommand("SELECT * FROM `tblCart` as ca inner JOIN `tblproduct` as p on ca.pid=p.id INNER JOIN tblbrand as b on p.bid=b.id INNER JOIN tblclassification as c on p.cid =c.id INNER JOIN tblformulation as f on p.fid=f.id INNER JOIN tblgeneric as g on p.gid=g.id INNER JOIN tbltype as t on p.tid=t.id", cn)
+            cm = New MySqlCommand("SELECT * FROM `tblCart` as ca inner JOIN `tblproduct` as p on ca.pid=p.id INNER JOIN tblbrand as b on p.bid=b.id INNER JOIN tblclassification as c on p.cid =c.id INNER JOIN tblformulation as f on p.fid=f.id INNER JOIN tblgeneric as g on p.gid=g.id INNER JOIN tbltype as t on p.tid=t.id where invoice like '" & lblInvoice.Text & "'", cn)
             dr = cm.ExecuteReader
             While dr.Read
                 i += 1
@@ -55,11 +59,9 @@ Public Class frmSales
             End While
             dr.Close()
             cn.Close()
-            txtTotal.Text = Format(_total, "#,##0.00")
-            lblSubTotal.Text = txtTotal.Text
-            lblVat.Text = Format(CDbl(lblSubTotal.Text) * getVat(), "#,##0.00")
-            lblDue.Text = Format(txtTotal.Text - lblVat.Text, "#,##0.00")
+            calculateSalesDetails(_total)
             If dataGridView2.Rows.Count > 0 Then btnSettle.Enabled = True Else btnSettle.Enabled = False
+            If dataGridView2.Rows.Count > 0 Then btnDisc.Enabled = True Else btnDisc.Enabled = False
 
         Catch ex As Exception
             dr.Close()
@@ -70,7 +72,18 @@ Public Class frmSales
 
 
     End Sub
+    Sub calculateSalesDetails(ByVal _total As Double)
+        lblTotal.Text = Format(_total, "#,##0.00")
+        lblSubTotal.Text = Format(CDbl(lblTotal.Text) - CDbl(lblDisc.Text), "#,##0.00")
+        lblVat.Text = Format(CDbl(lblSubTotal.Text) * getVat(), "#,##0.00")
+        lblDue.Text = Format(lblSubTotal.Text - lblVat.Text, "#,##0.00")
+        txtDisplayTotal.Text = lblDue.Text
 
+
+        btnDisc.Enabled = True
+        btnSales.Enabled = True
+
+    End Sub
     Function getInvoiceNo() As String
         Try
             Dim sdate As String = Now.ToString("yyyyMMdd")
@@ -90,11 +103,9 @@ Public Class frmSales
                 getInvoiceNo = sdate & "0001"
                 Return getInvoiceNo
             Else
-                getInvoiceNo = Str(CLng(getInvoiceNo) + 1)
+                getInvoiceNo = Trim(Str(CLng(getInvoiceNo) + 1))
                 Return getInvoiceNo
             End If
-
-
 
         Catch ex As Exception
             cn.Close()
@@ -188,6 +199,15 @@ tblformulation as f on p.fid=f.id INNER JOIN tblgeneric as g on p.gid=g.id INNER
 
             .lblDue.Text = lblDue.Text
 
+
+            .ShowDialog()
+
+        End With
+    End Sub
+
+    Private Sub btnDisc_Click(sender As Object, e As EventArgs) Handles btnDisc.Click
+        With frmChooseDiscount
+            .getdiscount()
 
             .ShowDialog()
 

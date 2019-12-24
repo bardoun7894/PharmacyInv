@@ -61,17 +61,20 @@ Public Class frmGenericList
     Private Sub dataGridView2_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dataGridView2.CellClick
         Dim colName As String = dataGridView2.Columns(e.ColumnIndex).Name
         If colName = "edit" Then
-            With frmGeneric
-                .labelId.Text = id
-                .txtGeneric.Text = _generic
-                .btnSave.Hide()
-                .btnUpdate.Show()
-                .ShowDialog()
-                loadRecords()
+            If (MsgBox("هل تريد تعديل هاته البيانات", vbYesNo + vbQuestion) = vbYes) Then
+                With frmGeneric
+                    .labelId.Text = id
+                    .txtGeneric.Text = _generic
+                    .btnSave.Hide()
+                    .btnUpdate.Show()
+                    .ShowDialog()
+                    loadRecords()
 
 
-            End With
+                End With
+            End If
         End If
+
         If colName = "delete" Then
 
             deleterow()

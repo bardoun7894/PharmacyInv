@@ -18,20 +18,23 @@ Public Class frmProductList
     Private Sub dataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dataGridView2.CellContentClick
         Dim colName As String = dataGridView2.Columns(e.ColumnIndex).Name
         If colName = "edit" Then
-            With frmProduct
-                .labelId.Text = dataGridView2.Rows(e.RowIndex).Cells(1).Value.ToString
-                .txtBarcode.Text = dataGridView2.Rows(e.RowIndex).Cells(2).Value.ToString
-                .txtBrand.Text = dataGridView2.Rows(e.RowIndex).Cells(3).Value.ToString
-                .txtGeneric.Text = dataGridView2.Rows(e.RowIndex).Cells(4).Value.ToString
-                .txtClassification.Text = dataGridView2.Rows(e.RowIndex).Cells(5).Value.ToString
-                .txtType.Text = dataGridView2.Rows(e.RowIndex).Cells(6).Value.ToString
-                .txtFormulation.Text = dataGridView2.Rows(e.RowIndex).Cells(7).Value.ToString
-                .txtReOrder.Text = dataGridView2.Rows(e.RowIndex).Cells(8).Value.ToString
-                .txtPrice.Text = dataGridView2.Rows(e.RowIndex).Cells(9).Value.ToString
-                .txtQTy.Text = dataGridView2.Rows(e.RowIndex).Cells(10).Value.ToString
-                .ShowDialog()
-            End With
+            If (MsgBox("هل تريد تعديل هاته البيانات", vbYesNo + vbQuestion) = vbYes) Then
+                With frmProduct
+                    .labelId.Text = dataGridView2.Rows(e.RowIndex).Cells(1).Value.ToString
+                    .txtBarcode.Text = dataGridView2.Rows(e.RowIndex).Cells(2).Value.ToString
+                    .txtBrand.Text = dataGridView2.Rows(e.RowIndex).Cells(3).Value.ToString
+                    .txtGeneric.Text = dataGridView2.Rows(e.RowIndex).Cells(4).Value.ToString
+                    .txtClassification.Text = dataGridView2.Rows(e.RowIndex).Cells(5).Value.ToString
+                    .txtType.Text = dataGridView2.Rows(e.RowIndex).Cells(6).Value.ToString
+                    .txtFormulation.Text = dataGridView2.Rows(e.RowIndex).Cells(7).Value.ToString
+                    .txtReOrder.Text = dataGridView2.Rows(e.RowIndex).Cells(8).Value.ToString
+                    .txtPrice.Text = dataGridView2.Rows(e.RowIndex).Cells(9).Value.ToString
+                    .txtQTy.Text = dataGridView2.Rows(e.RowIndex).Cells(10).Value.ToString
+                    .ShowDialog()
+                End With
+            End If
         End If
+
         If colName = "delete" Then
             Try
                 If (MsgBox("هل تريد حذف هاته البيانات", vbYesNo + vbQuestion) = vbYes) Then

@@ -30,7 +30,6 @@ Public Class frmSettle
             If CDbl(lblDue.Text) > CDbl(txtCash.Text) Then
                 MsgBox("المبلغ غير كافي !المرجو ادخال المبلغ الصحيح")
                 Return
-
             End If
             If (MsgBox("هل تريد حفظ هذه البيانات ؟  ", vbYesNo + vbQuestion) = vbYes) Then
                 cn.Open()
@@ -46,7 +45,6 @@ Public Class frmSettle
                     cm.ExecuteNonQuery()
                     cn.Close()
                     minusStockQty()
-                    .lblInvoice.Text = .getInvoiceNo
 
                 End With
 
@@ -93,8 +91,6 @@ Public Class frmSettle
             Case Keys.Enter
                 settlePayment()
                 With frmSales
-
-
                     .txtSearch.Clear()
                     .txtSearch.Enabled = True
                     .txtSearch.Focus()
@@ -109,22 +105,18 @@ Public Class frmSettle
 
 
             With frmSales
-
                 For i = 0 To .dataGridView2.Rows.Count - 1
                     cn.Open()
                     cm = New MySqlCommand("update tblProduct set qty =qty -'" & CInt(.dataGridView2.Rows(i).Cells(10).Value.ToString) & "' where id like '" & CInt(.dataGridView2.Rows(i).Cells(2).Value.ToString) & "'", cn)
                     cm.ExecuteNonQuery()
                     cn.Close()
-
-
                 Next
-
                 cn.Open()
-
-                cm = New MySqlCommand("update tblCart set status ='Sold' where invoice = '" & Trim(.lblInvoice.Text) & "' ", cn)
+                cm = New MySqlCommand("update tblCart set status ='Sold' where invoice like '" & Trim(.lblInvoice.Text) & "'", cn)
                 cm.ExecuteNonQuery()
-
                 cn.Close()
+                .lblInvoice.Text = .getInvoiceNo
+                .loadCart()
             End With
 
         Catch ex As Exception

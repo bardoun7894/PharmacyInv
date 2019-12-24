@@ -82,6 +82,7 @@
             Panel3.Controls.Clear()
             Panel3.Controls.Add(frmDiscount)
             .BringToFront()
+            .btnUpdate.Enabled = False
             .loadDiscounts()
             .Show()
         End With
