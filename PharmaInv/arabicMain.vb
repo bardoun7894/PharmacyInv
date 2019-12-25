@@ -54,8 +54,22 @@
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         With frmSales
+            .btnSales.Enabled = True
             .ShowDialog()
 
+        End With
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        With frmRecords
+            .Dock = DockStyle.Fill
+            .TopLevel = False
+            Panel3.Controls.Clear()
+            Panel3.Controls.Add(frmRecords)
+            .BringToFront()
+
+
+            .Show()
         End With
     End Sub
 End Class

@@ -2,12 +2,12 @@
 Public Class frmProductList
 
 
-    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Me.Dispose()
 
     End Sub
 
-    Private Sub pictureBox1_Click(sender As Object, e As EventArgs) Handles pictureBox1.Click
+    Private Sub pictureBox1_Click(sender As Object, e As EventArgs) Handles btnaddProdtuct.Click
         With frmProduct
             .btnSave.Show()
             .btnUpdate.Hide()
@@ -53,6 +53,68 @@ Public Class frmProductList
 
         End If
     End Sub
+    'هذه الدالة خاصة بالارشيف
+    Sub searchRecords(ByVal cboFilter As String, ByVal txtSearch As String, ByRef rcount As String, ByRef icount As String)
+
+        Try
+            Dim stock As Double = 0
+
+            Dim i As Integer = 0
+            dataGridView2.Rows.Clear()
+            Dim tc As String = ""
+
+            Select Case cboFilter
+                Case "اسم الشعار"
+                    tc = "brand"
+                Case "الباركود"
+                    tc = "barcode"
+                Case "الاسم العام"
+                    tc = "generic"
+            End Select
+            cn.Open()
+
+            If tc = "barcode" Then cm = New MySqlCommand("SELECT * FROM  `tblproduct` as p INNER JOIN tblbrand as b on p.bid=b.id INNER JOIN tblclassification as c on p.cid =c.id INNER JOIN tblformulation as f on p.fid=f.id INNER JOIN tblgeneric as g on p.gid=g.id INNER JOIN tbltype as t on p.tid=t.id where barcode like '%" & txtSearch & "%'", cn)
+            If tc = "brand" Then cm = New MySqlCommand("SELECT * FROM  `tblproduct` as p INNER JOIN tblbrand as b on p.bid=b.id INNER JOIN tblclassification as c on p.cid =c.id INNER JOIN tblformulation as f on p.fid=f.id INNER JOIN tblgeneric as g on p.gid=g.id INNER JOIN tbltype as t on p.tid=t.id where brand like '%" & txtSearch & "%'", cn)
+            If tc = "generic" Then cm = New MySqlCommand("SELECT * FROM  `tblproduct` as p INNER JOIN tblbrand as b on p.bid=b.id INNER JOIN tblclassification as c on p.cid =c.id INNER JOIN tblformulation as f on p.fid=f.id INNER JOIN tblgeneric as g on p.gid=g.id INNER JOIN tbltype as t on p.tid=t.id where generic like '%" & txtSearch & "%'", cn)
+            If tc = "" Then cm = New MySqlCommand("SELECT * FROM `tblproduct` as p INNER JOIN tblbrand as b on p.bid=b.id INNER JOIN tblclassification as c on p.cid =c.id INNER JOIN tblformulation as f on p.fid=f.id INNER JOIN tblgeneric as g on p.gid=g.id INNER JOIN tbltype as t on p.tid=t.id", cn)
+
+
+            dr = cm.ExecuteReader()
+
+
+
+            While dr.Read()
+                i += 1
+                dataGridView2.Rows.Add(
+                        i, dr.Item("id").ToString(), dr.Item("barcode").ToString(),
+                         dr.Item("brand").ToString(), dr.Item("generic").ToString(),
+                        dr.Item("classification").ToString(), dr.Item("type").ToString(),
+                         dr.Item("formulation").ToString(), dr.Item("reorder").ToString(),
+                          dr.Item("price").ToString(), dr.Item("qty").ToString())
+            End While
+
+
+            For i = 0 To dataGridView2.Rows.Count - 1
+                If dataGridView2.Rows(i).Cells(10).Value.ToString <> String.Empty Then
+                    stock += CDbl(dataGridView2.Rows(i).Cells(10).Value.ToString)
+                    rcount = dataGridView2.Rows.Count
+                End If
+                icount = stock
+
+
+
+            Next
+            dr.Close()
+            cn.Close()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+
+        End Try
+
+
+
+    End Sub
 
 
     Sub loadRecords()
@@ -65,6 +127,9 @@ Public Class frmProductList
             cn.Open()
             cm = New MySqlCommand("SELECT * FROM `tblproduct` as p INNER JOIN tblbrand as b on p.bid=b.id INNER JOIN tblclassification as c on p.cid =c.id INNER JOIN tblformulation as f on p.fid=f.id INNER JOIN tblgeneric as g on p.gid=g.id INNER JOIN tbltype as t on p.tid=t.id", cn)
             dr = cm.ExecuteReader()
+
+
+
             While dr.Read()
                 i += 1
                 dataGridView2.Rows.Add(
@@ -79,7 +144,7 @@ Public Class frmProductList
 
             For i = 0 To dataGridView2.Rows.Count - 1
                 If dataGridView2.Rows(i).Cells(9).Value.ToString <> String.Empty Then
-                    stock += CDbl(dataGridView2.Rows(i).Cells(9).Value.ToString)
+                    stock += CDbl(dataGridView2.Rows(i).Cells(10).Value.ToString)
                 End If
                 txtCount.Text = stock
 
@@ -105,7 +170,4 @@ Public Class frmProductList
         End With
     End Sub
 
-    Private Sub Panel5_Paint(sender As Object, e As PaintEventArgs) Handles Panel5.Paint
-
-    End Sub
 End Class

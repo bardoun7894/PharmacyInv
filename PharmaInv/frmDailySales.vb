@@ -5,8 +5,9 @@ Public Class frmDailySales
 
 
     Sub loadDailySales()
-        Dim sdate As String = Now.ToString("yyyy-MM-dd")
-        lblDate.Text = sdate & " : تاريخ اليوم"
+        Dim sdate As String = dt1.Value.ToString("yyyy-MM-dd")
+
+
         Dim i As Integer = 0
         Try
             dataGridView2.Rows.Clear()
@@ -24,13 +25,11 @@ Public Class frmDailySales
             End While
             dr.Close()
             cn.Close()
-
-
-            txtTotal.Text = getdata("select sum(total) from tblcart where sdate between '" & sdate & "' and '" & sdate & "' and status like 'Sold'")
-            txtDiscount.Text = getdata("select sum(discount) from tblPayment where sdate between '" & sdate & "' and '" & sdate & "' ")
-            txtVat.Text = getdata("select sum(vat) from tblPayment where sdate between '" & sdate & "' and '" & sdate & "'")
-            txtSubTotal.Text = getdata("select sum(subtotal) from tblPayment where sdate between '" & sdate & "' and '" & sdate & "'")
-            txtSales.Text = getdata("select sum(amountdue) from tblPayment where sdate between '" & sdate & "' and '" & sdate & "'")
+            txtTotal.Text = getdata("select ifnull(sum(total),0) from tblcart where sdate between '" & sdate & "' and '" & sdate & "' and status like 'Sold'")
+            txtDiscount.Text = getdata("select ifnull(sum(discount),0) from tblPayment where sdate between '" & sdate & "' and '" & sdate & "' ")
+            txtVat.Text = getdata("select ifnull(sum(vat),0) from tblPayment where sdate between '" & sdate & "' and '" & sdate & "'")
+            txtSubTotal.Text = getdata("select ifnull(sum(subtotal),0) from tblPayment where sdate between '" & sdate & "' and '" & sdate & "'")
+            txtSales.Text = getdata("select ifnull(sum(amountdue),0) from tblPayment where sdate between '" & sdate & "' and '" & sdate & "'")
             lblTotal.Text = txtSales.Text
             dataGridView2.Rows.Add("", "", "", "", "", "", "", "", "", "المجموع", txtTotal.Text)
         Catch ex As Exception
@@ -55,15 +54,4 @@ Public Class frmDailySales
         End Try
     End Function
 
-    Private Sub dataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dataGridView2.CellContentClick
-
-    End Sub
-
-    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
-
-    End Sub
-
-    Private Sub frmDailySales_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 End Class

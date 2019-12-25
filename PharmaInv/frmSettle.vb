@@ -81,6 +81,7 @@ Public Class frmSettle
     End Sub
 
     Private Sub frmSettle_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        Dim s As Double = 0
 
         Select Case e.KeyCode
 
@@ -89,12 +90,36 @@ Public Class frmSettle
                 Me.Dispose()
 
             Case Keys.Enter
-                settlePayment()
+
+
                 With frmSales
-                    .txtSearch.Clear()
-                    .txtSearch.Enabled = True
-                    .txtSearch.Focus()
+                    s = CDbl(.lblDue.Text)
+                    If s <= 0 Then
+                        If (MsgBox("لا يوجد ربح او الربح غير كافي هل تريد الاستمرار", vbYesNo + vbQuestion) = vbYes) Then
+                            settlePayment()
+                            .txtSearch.Clear()
+                            .txtSearch.Enabled = True
+                            .txtSearch.Focus()
+                        Else
+                            .loadCart()
+                            .lblInvoice.Enabled = True
+                            .lblInvoice.Text = .getInvoiceNo()
+                            .cboFilter.Text = "الباركود"
+                            .txtSearch.Enabled = True
+                            .txtSearch.Focus()
+                        End If
+                    Else
+                        settlePayment()
+
+                        .txtSearch.Clear()
+                        .txtSearch.Enabled = True
+                        .txtSearch.Focus()
+                    End If
+
+
                 End With
+
+
                 Me.Dispose()
 
 
@@ -116,7 +141,7 @@ Public Class frmSettle
                 cm.ExecuteNonQuery()
                 cn.Close()
                 .lblInvoice.Text = .getInvoiceNo
-                .loadCart()
+
             End With
 
         Catch ex As Exception

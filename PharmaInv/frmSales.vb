@@ -3,15 +3,12 @@
 Imports MySql.Data.MySqlClient
 Public Class frmSales
     Private Sub frmSales_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         lblInvoice.Enabled = True
         lblInvoice.Text = getInvoiceNo()
         cboFilter.Text = "الباركود"
         txtSearch.Enabled = True
         txtSearch.Select()
-
         txtSearch.Focus()
-
     End Sub
 
     Private Sub MetroComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboFilter.SelectedIndexChanged
@@ -22,7 +19,6 @@ Public Class frmSales
         With frmDailySales
             .loadDailySales()
             .ShowDialog()
-
         End With
     End Sub
 
@@ -40,10 +36,6 @@ Public Class frmSales
             txtSearch.Enabled = True
             txtSearch.Focus()
         End If
-
-
-
-
     End Sub
     Sub loadCart()
         Dim _total As Double = 0, i As Integer = 0
@@ -67,21 +59,18 @@ Public Class frmSales
             dr.Close()
             cn.Close()
             MsgBox(ex.Message)
-
         End Try
-
-
     End Sub
+
     Sub calculateSalesDetails(ByVal _total As Double)
+        Dim s As Double = 0
         lblTotal.Text = Format(_total, "#,##0.00")
         lblSubTotal.Text = Format(CDbl(lblTotal.Text) - CDbl(lblDisc.Text), "#,##0.00")
         lblVat.Text = Format(CDbl(lblSubTotal.Text) * getVat(), "#,##0.00")
-        lblDue.Text = Format(lblSubTotal.Text - lblVat.Text, "#,##0.00")
+        s = lblSubTotal.Text - lblVat.Text
+        lblDue.Text = Format(s, "#,##0.00")
         txtDisplayTotal.Text = lblDue.Text
-
-
         btnDisc.Enabled = True
-        btnSales.Enabled = True
 
     End Sub
     Function getInvoiceNo() As String
@@ -156,20 +145,17 @@ tblformulation as f on p.fid=f.id INNER JOIN tblgeneric as g on p.gid=g.id INNER
         dr.Read()
         If dr.HasRows Then
             With frmQty
+
                 .lblPid.Text = dr.Item("pid").ToString
                 .lblPrice.Text = dr.Item("price").ToString
+
                 dr.Close()
                 cn.Close()
                 .ShowDialog()
             End With
-
         End If
         dr.Close()
-
         cn.Close()
-
-
-
     End Sub
 
     Private Sub dataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dataGridView2.CellContentClick
@@ -196,10 +182,7 @@ tblformulation as f on p.fid=f.id INNER JOIN tblgeneric as g on p.gid=g.id INNER
 
     Private Sub btnSettle_Click(sender As Object, e As EventArgs) Handles btnSettle.Click
         With frmSettle
-
             .lblDue.Text = lblDue.Text
-
-
             .ShowDialog()
 
         End With
@@ -212,5 +195,9 @@ tblformulation as f on p.fid=f.id INNER JOIN tblgeneric as g on p.gid=g.id INNER
             .ShowDialog()
 
         End With
+    End Sub
+
+    Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
+
     End Sub
 End Class
