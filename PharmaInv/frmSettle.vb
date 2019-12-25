@@ -45,7 +45,7 @@ Public Class frmSettle
                     cm.ExecuteNonQuery()
                     cn.Close()
                     minusStockQty()
-
+                    .refreshCard()
                 End With
 
             End If
@@ -96,6 +96,7 @@ Public Class frmSettle
                     s = CDbl(.lblDue.Text)
                     If s <= 0 Then
                         If (MsgBox("لا يوجد ربح او الربح غير كافي هل تريد الاستمرار", vbYesNo + vbQuestion) = vbYes) Then
+
                             settlePayment()
                             .txtSearch.Clear()
                             .txtSearch.Enabled = True

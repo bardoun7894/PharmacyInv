@@ -55,7 +55,7 @@ Public Class frmProductList
     End Sub
     'هذه الدالة خاصة بالارشيف
     Sub searchRecords(ByVal cboFilter As String, ByVal txtSearch As String, ByRef rcount As String, ByRef icount As String)
-
+        If ConnectionState.Open Then cn.Close()
         Try
             Dim stock As Double = 0
 
@@ -72,13 +72,16 @@ Public Class frmProductList
                     tc = "generic"
             End Select
             cn.Open()
+            cm = Nothing
 
-            If tc = "barcode" Then cm = New MySqlCommand("SELECT * FROM  `tblproduct` as p INNER JOIN tblbrand as b on p.bid=b.id INNER JOIN tblclassification as c on p.cid =c.id INNER JOIN tblformulation as f on p.fid=f.id INNER JOIN tblgeneric as g on p.gid=g.id INNER JOIN tbltype as t on p.tid=t.id where barcode like '%" & txtSearch & "%'", cn)
-            If tc = "brand" Then cm = New MySqlCommand("SELECT * FROM  `tblproduct` as p INNER JOIN tblbrand as b on p.bid=b.id INNER JOIN tblclassification as c on p.cid =c.id INNER JOIN tblformulation as f on p.fid=f.id INNER JOIN tblgeneric as g on p.gid=g.id INNER JOIN tbltype as t on p.tid=t.id where brand like '%" & txtSearch & "%'", cn)
-            If tc = "generic" Then cm = New MySqlCommand("SELECT * FROM  `tblproduct` as p INNER JOIN tblbrand as b on p.bid=b.id INNER JOIN tblclassification as c on p.cid =c.id INNER JOIN tblformulation as f on p.fid=f.id INNER JOIN tblgeneric as g on p.gid=g.id INNER JOIN tbltype as t on p.tid=t.id where generic like '%" & txtSearch & "%'", cn)
+            If tc = "barcode" Then cm = New MySqlCommand("SELECT * FROM  `tblproduct` as p INNER JOIN tblbrand as b on p.bid=b.id INNER JOIN tblclassification as c on p.cid =c.id INNER JOIN tblformulation as f on p.fid=f.id INNER JOIN tblgeneric as g on p.gid=g.id INNER JOIN tbltype as t on p.tid=t.id where qty > 0 and barcode like '%" & txtSearch & "%'", cn)
+
+
+            If tc = "brand" Then cm = New MySqlCommand("SELECT * FROM  `tblproduct` as p INNER JOIN tblbrand as b on p.bid=b.id INNER JOIN tblclassification as c on p.cid =c.id INNER JOIN tblformulation as f on p.fid=f.id INNER JOIN tblgeneric as g on p.gid=g.id INNER JOIN tbltype as t on p.tid=t.id where qty > 0 and brand like '%" & txtSearch & "%'", cn)
+
+            If tc = "generic" Then cm = New MySqlCommand("SELECT * FROM  `tblproduct` as p INNER JOIN tblbrand as b on p.bid=b.id INNER JOIN tblclassification as c on p.cid =c.id INNER JOIN tblformulation as f on p.fid=f.id INNER JOIN tblgeneric as g on p.gid=g.id INNER JOIN tbltype as t on p.tid=t.id qty > 0 and where generic like '%" & txtSearch & "%'", cn)
+
             If tc = "" Then cm = New MySqlCommand("SELECT * FROM `tblproduct` as p INNER JOIN tblbrand as b on p.bid=b.id INNER JOIN tblclassification as c on p.cid =c.id INNER JOIN tblformulation as f on p.fid=f.id INNER JOIN tblgeneric as g on p.gid=g.id INNER JOIN tbltype as t on p.tid=t.id", cn)
-
-
             dr = cm.ExecuteReader()
 
 
@@ -93,7 +96,7 @@ Public Class frmProductList
                           dr.Item("price").ToString(), dr.Item("qty").ToString())
             End While
 
-
+            dr.Close()
             For i = 0 To dataGridView2.Rows.Count - 1
                 If dataGridView2.Rows(i).Cells(10).Value.ToString <> String.Empty Then
                     stock += CDbl(dataGridView2.Rows(i).Cells(10).Value.ToString)
@@ -101,14 +104,72 @@ Public Class frmProductList
                 End If
                 icount = stock
 
-
-
             Next
-            dr.Close()
+
             cn.Close()
 
         Catch ex As Exception
             MsgBox(ex.Message)
+
+            cn.Close()
+        End Try
+
+
+
+    End Sub
+    Sub criticalStock(ByVal cboStock As String, ByRef icount As String, ByRef rcount As String)
+        If ConnectionState.Open Then cn.Close()
+
+        Try
+            Dim i As Integer = 0
+            Dim stock As Double = 0
+            dataGridView2.Rows.Clear()
+            Dim tc As String = ""
+
+            Select Case cboStock
+                Case "نفاذ المخزون"
+                    tc = "outStock"
+                Case "اقتراب نفاذ المخزون"
+                    tc = "underStock"
+                Case ""
+                    tc = ""
+            End Select
+
+            cn.Open()
+            cm = Nothing
+
+            If cboStock = String.Empty Then Return
+            If tc = "outStock" Then cm = New MySqlCommand("SELECT * FROM  `tblproduct` as p INNER JOIN tblbrand as b on p.bid=b.id INNER JOIN tblclassification as c on p.cid =c.id INNER JOIN tblformulation as f on p.fid=f.id INNER JOIN tblgeneric as g on p.gid=g.id INNER JOIN tbltype as t on p.tid=t.id where qty = 0", cn)
+
+            If tc = "underStock" Then cm = New MySqlCommand("SELECT * FROM  `tblproduct` as p INNER JOIN tblbrand as b on p.bid=b.id INNER JOIN tblclassification as c on p.cid =c.id INNER JOIN tblformulation as f on p.fid=f.id INNER JOIN tblgeneric as g on p.gid=g.id INNER JOIN tbltype as t on p.tid=t.id where qty <= reorder and qty <> 0", cn)
+
+
+                dr = cm.ExecuteReader()
+
+            While dr.Read()
+                i += 1
+                dataGridView2.Rows.Add(
+                        i, dr.Item("id").ToString(), dr.Item("barcode").ToString(),
+                         dr.Item("brand").ToString(), dr.Item("generic").ToString(),
+                        dr.Item("classification").ToString(), dr.Item("type").ToString(),
+                         dr.Item("formulation").ToString(), dr.Item("reorder").ToString(),
+                      dr.Item("price").ToString(), dr.Item("qty").ToString())
+            End While
+            dr.Close()
+            For i = 0 To dataGridView2.Rows.Count - 1
+                If dataGridView2.Rows(i).Cells(10).Value.ToString <> String.Empty Then
+                    stock += CDbl(dataGridView2.Rows(i).Cells(10).Value.ToString)
+                    rcount = dataGridView2.Rows.Count
+                End If
+                icount = stock
+            Next
+
+            cn.Close()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+
+            cn.Close()
 
         End Try
 
@@ -116,20 +177,17 @@ Public Class frmProductList
 
     End Sub
 
-
     Sub loadRecords()
+        If ConnectionState.Open Then cn.Close()
         Try
             Dim stock As Double = 0
-
             Dim i As Integer = 0
             dataGridView2.Rows.Clear()
-
             cn.Open()
+            cm = Nothing
+
             cm = New MySqlCommand("SELECT * FROM `tblproduct` as p INNER JOIN tblbrand as b on p.bid=b.id INNER JOIN tblclassification as c on p.cid =c.id INNER JOIN tblformulation as f on p.fid=f.id INNER JOIN tblgeneric as g on p.gid=g.id INNER JOIN tbltype as t on p.tid=t.id", cn)
             dr = cm.ExecuteReader()
-
-
-
             While dr.Read()
                 i += 1
                 dataGridView2.Rows.Add(
@@ -139,22 +197,20 @@ Public Class frmProductList
                          dr.Item("formulation").ToString(), dr.Item("reorder").ToString(),
                           dr.Item("price").ToString(), dr.Item("qty").ToString())
             End While
-
-
+            dr.Close()
 
             For i = 0 To dataGridView2.Rows.Count - 1
-                If dataGridView2.Rows(i).Cells(9).Value.ToString <> String.Empty Then
+                If dataGridView2.Rows(i).Cells(10).Value.ToString <> String.Empty Then
                     stock += CDbl(dataGridView2.Rows(i).Cells(10).Value.ToString)
                 End If
                 txtCount.Text = stock
-
-
-
             Next
-            dr.Close()
+
             cn.Close()
         Catch ex As Exception
             MsgBox(ex.Message)
+
+            cn.Close()
         End Try
     End Sub
 

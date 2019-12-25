@@ -29,13 +29,36 @@ Public Class frmSales
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnTransaction.Click
         If MsgBox("ابدأ عملية بيع جديدة", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
-            loadCart()
+            refreshCard()
             lblInvoice.Enabled = True
             lblInvoice.Text = getInvoiceNo()
             cboFilter.Text = "الباركود"
             txtSearch.Enabled = True
             txtSearch.Focus()
         End If
+    End Sub
+    Sub refreshCard()
+        Dim _total As Double = 0, i As Integer = 0
+        Try
+            dataGridView2.Rows.Clear()
+            cn.Open()
+            cm = New MySqlCommand("SELECT * FROM `tblCart` as ca inner JOIN `tblproduct` as p on ca.pid=p.id INNER JOIN tblbrand as b on p.bid=b.id INNER JOIN tblclassification as c on p.cid =c.id INNER JOIN tblformulation as f on p.fid=f.id INNER JOIN tblgeneric as g on p.gid=g.id INNER JOIN tbltype as t on p.tid=t.id where invoice like '" & lblInvoice.Text & "'", cn)
+            dr = cm.ExecuteReader
+            While dr.Read
+                i += 1
+                dataGridView2.Rows.Add(i, dr.Item("id").ToString, dr.Item("pid").ToString, dr.Item("invoice"), dr.Item("brand"), dr.Item("generic").ToString, dr.Item("classification").ToString, dr.Item("type").ToString, dr.Item("formulation").ToString, dr.Item("price").ToString, dr.Item("qty").ToString, dr.Item("total").ToString)
+                _total += CDbl(dr.Item("total").ToString)
+            End While
+            dr.Close()
+            cn.Close()
+
+            If dataGridView2.Rows.Count > 0 Then btnSettle.Enabled = True Else btnSettle.Enabled = False
+            If dataGridView2.Rows.Count > 0 Then btnDisc.Enabled = True Else btnDisc.Enabled = False
+        Catch ex As Exception
+            dr.Close()
+            cn.Close()
+            MsgBox(ex.Message)
+        End Try
     End Sub
     Sub loadCart()
         Dim _total As Double = 0, i As Integer = 0
@@ -61,7 +84,6 @@ Public Class frmSales
             MsgBox(ex.Message)
         End Try
     End Sub
-
     Sub calculateSalesDetails(ByVal _total As Double)
         Dim s As Double = 0
         lblTotal.Text = Format(_total, "#,##0.00")
@@ -115,6 +137,7 @@ Public Class frmSales
         searchProduct(cboFilter.Text, txtSearch.Text)
 
     End Sub
+
     Sub searchProduct(ByVal pfilter As String, ByVal psearch As String)
 
 
@@ -145,10 +168,8 @@ tblformulation as f on p.fid=f.id INNER JOIN tblgeneric as g on p.gid=g.id INNER
         dr.Read()
         If dr.HasRows Then
             With frmQty
-
                 .lblPid.Text = dr.Item("pid").ToString
                 .lblPrice.Text = dr.Item("price").ToString
-
                 dr.Close()
                 cn.Close()
                 .ShowDialog()

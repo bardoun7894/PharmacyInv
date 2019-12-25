@@ -24,12 +24,15 @@ Partial Class frmRecords
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRecords))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.pnlSearch = New System.Windows.Forms.Panel()
+        Me.cboStock = New MetroFramework.Controls.MetroComboBox()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.cboFilter = New MetroFramework.Controls.MetroComboBox()
@@ -40,6 +43,7 @@ Partial Class frmRecords
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtCount = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlSearch.SuspendLayout()
@@ -51,6 +55,8 @@ Partial Class frmRecords
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(171, Byte), Integer), CType(CType(160, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.PictureBox3)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.PictureBox2)
@@ -61,12 +67,33 @@ Partial Class frmRecords
         Me.Panel1.Size = New System.Drawing.Size(1282, 90)
         Me.Panel1.TabIndex = 23
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Arabic Typesetting", 13.8!, System.Drawing.FontStyle.Bold)
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(782, 62)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(108, 27)
+        Me.Label5.TabIndex = 5
+        Me.Label5.Text = "حالة نفاذ المخزون"
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
+        Me.PictureBox3.Location = New System.Drawing.Point(804, 6)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(61, 53)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 4
+        Me.PictureBox3.TabStop = False
+        '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Arabic Typesetting", 13.8!, System.Drawing.FontStyle.Bold)
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(891, 62)
+        Me.Label2.Location = New System.Drawing.Point(905, 60)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(56, 27)
         Me.Label2.TabIndex = 3
@@ -86,7 +113,7 @@ Partial Class frmRecords
         'PictureBox2
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(893, 6)
+        Me.PictureBox2.Location = New System.Drawing.Point(900, 6)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(61, 53)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -114,6 +141,7 @@ Partial Class frmRecords
         'pnlSearch
         '
         Me.pnlSearch.BackColor = System.Drawing.Color.White
+        Me.pnlSearch.Controls.Add(Me.cboStock)
         Me.pnlSearch.Controls.Add(Me.PictureBox7)
         Me.pnlSearch.Controls.Add(Me.txtSearch)
         Me.pnlSearch.Controls.Add(Me.cboFilter)
@@ -122,6 +150,19 @@ Partial Class frmRecords
         Me.pnlSearch.Size = New System.Drawing.Size(1282, 47)
         Me.pnlSearch.TabIndex = 25
         Me.pnlSearch.Visible = False
+        '
+        'cboStock
+        '
+        Me.cboStock.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cboStock.DisplayMember = "الباركود"
+        Me.cboStock.FormattingEnabled = True
+        Me.cboStock.ItemHeight = 24
+        Me.cboStock.Items.AddRange(New Object() {"", "نفاذ المخزون", "اقتراب نفاذ المخزون"})
+        Me.cboStock.Location = New System.Drawing.Point(25, 8)
+        Me.cboStock.Name = "cboStock"
+        Me.cboStock.Size = New System.Drawing.Size(261, 30)
+        Me.cboStock.TabIndex = 30
         '
         'PictureBox7
         '
@@ -237,6 +278,7 @@ Partial Class frmRecords
         Me.Text = "frmRecords"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlSearch.ResumeLayout(False)
@@ -266,4 +308,7 @@ Partial Class frmRecords
     Friend WithEvents txtStockCount As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents txtCount As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents cboStock As MetroFramework.Controls.MetroComboBox
 End Class

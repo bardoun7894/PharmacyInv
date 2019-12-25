@@ -50,20 +50,45 @@ Public Class frmQty
         Return getStockAvailable
     End Function
 
-    'i stopped here where error open connection
+    Function getdata(ByVal sql As String) As String
+        Try
+            cn.Open()
+            cm = New MySqlCommand(sql, cn)
+            getdata = cm.ExecuteScalar
+            cn.Close()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            cn.Close()
+
+        End Try
+    End Function
+
     Sub addToCart()
         Dim sdate As String = Now.ToString("yyyy-MM-dd")
-        Dim i As Integer = 0
+        Dim i As Integer = 0, q = 0
         Try
+            With frmSales
+                i = CInt(getdata("select ifnull(sum(qty),0) from tblcart where invoice like " & Trim(Str(.lblInvoice.Text)) & " and status like 'Pending'"))
+            End With
+
             If txtQty.Text = String.Empty Or txtQty.Text = 0 Then Return
+
             cn.Open()
             cm = Nothing
             cm = New MySqlCommand("select * from tblProduct where id like '" & CInt(lblPid.Text) & "' and  qty >= '" & CInt(txtQty.Text) & "'", cn)
             dr = cm.ExecuteReader
             dr.Read()
             If dr.HasRows Then
-                cn.Close()
-                dr.Close()
+                q = dr.Item("qty").ToString
+                If q < i + 1 Then
+                    MsgBox("نفذت الكمية لا يمكنك اضافة هذا المنتج")
+                    Me.Dispose()
+                    Return
+                Else
+                    cn.Close()
+                    dr.Close()
+                End If
             Else
                 cn.Close()
                 dr.Close()
