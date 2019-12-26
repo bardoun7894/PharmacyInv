@@ -23,14 +23,25 @@ Partial Class frmDailySales
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmDailySales))
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.panel1 = New System.Windows.Forms.Panel()
         Me.pictureBox2 = New System.Windows.Forms.PictureBox()
         Me.label1 = New System.Windows.Forms.Label()
         Me.dataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lblTotal = New System.Windows.Forms.TextBox()
         Me.lblDate = New System.Windows.Forms.Label()
@@ -44,17 +55,6 @@ Partial Class frmDailySales
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtTotal = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dt1 = New System.Windows.Forms.DateTimePicker()
         Me.panel1.SuspendLayout()
         CType(Me.pictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -100,34 +100,34 @@ Partial Class frmDailySales
         '
         Me.dataGridView2.AllowUserToAddRows = False
         Me.dataGridView2.AllowUserToOrderColumns = True
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(252, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(221, Byte), Integer))
-        Me.dataGridView2.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(252, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(221, Byte), Integer))
+        Me.dataGridView2.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dataGridView2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dataGridView2.BackgroundColor = System.Drawing.Color.White
         Me.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(13, Byte), Integer), CType(CType(112, Byte), Integer), CType(CType(224, Byte), Integer))
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(13, Byte), Integer), CType(CType(112, Byte), Integer), CType(CType(224, Byte), Integer))
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(13, Byte), Integer), CType(CType(112, Byte), Integer), CType(CType(224, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(13, Byte), Integer), CType(CType(112, Byte), Integer), CType(CType(224, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dataGridView2.ColumnHeadersHeight = 40
         Me.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column11, Me.Column2, Me.Column12, Me.Column4, Me.Column1, Me.Column3, Me.Column5, Me.Column6, Me.Column8, Me.Column9, Me.Column7})
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(253, Byte), Integer))
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Segoe UI Semibold", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(221, Byte), Integer))
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dataGridView2.DefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(253, Byte), Integer))
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI Semibold", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(221, Byte), Integer))
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dataGridView2.DefaultCellStyle = DataGridViewCellStyle4
         Me.dataGridView2.EnableHeadersVisualStyles = False
         Me.dataGridView2.Location = New System.Drawing.Point(13, 98)
         Me.dataGridView2.Margin = New System.Windows.Forms.Padding(4)
@@ -138,6 +138,97 @@ Partial Class frmDailySales
         Me.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dataGridView2.Size = New System.Drawing.Size(1247, 667)
         Me.dataGridView2.TabIndex = 38
+        '
+        'Column11
+        '
+        Me.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Column11.HeaderText = "#"
+        Me.Column11.MinimumWidth = 6
+        Me.Column11.Name = "Column11"
+        Me.Column11.Width = 125
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column2.HeaderText = "ID"
+        Me.Column2.MinimumWidth = 6
+        Me.Column2.Name = "Column2"
+        Me.Column2.Visible = False
+        Me.Column2.Width = 56
+        '
+        'Column12
+        '
+        Me.Column12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column12.HeaderText = "PID"
+        Me.Column12.MinimumWidth = 6
+        Me.Column12.Name = "Column12"
+        Me.Column12.Visible = False
+        Me.Column12.Width = 66
+        '
+        'Column4
+        '
+        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Arabic Typesetting", 16.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Column4.DefaultCellStyle = DataGridViewCellStyle3
+        Me.Column4.HeaderText = "اسم الشعار "
+        Me.Column4.MinimumWidth = 6
+        Me.Column4.Name = "Column4"
+        '
+        'Column1
+        '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column1.HeaderText = "الاسم العام"
+        Me.Column1.MinimumWidth = 6
+        Me.Column1.Name = "Column1"
+        '
+        'Column3
+        '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column3.HeaderText = "التصنيف"
+        Me.Column3.MinimumWidth = 6
+        Me.Column3.Name = "Column3"
+        Me.Column3.Width = 99
+        '
+        'Column5
+        '
+        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column5.HeaderText = "النوع"
+        Me.Column5.MinimumWidth = 6
+        Me.Column5.Name = "Column5"
+        Me.Column5.Width = 72
+        '
+        'Column6
+        '
+        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column6.HeaderText = "الصيغة"
+        Me.Column6.MinimumWidth = 6
+        Me.Column6.Name = "Column6"
+        Me.Column6.Width = 89
+        '
+        'Column8
+        '
+        Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column8.HeaderText = "الثمن"
+        Me.Column8.MinimumWidth = 6
+        Me.Column8.Name = "Column8"
+        Me.Column8.Width = 74
+        '
+        'Column9
+        '
+        Me.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column9.HeaderText = "كمية المخزون"
+        Me.Column9.MinimumWidth = 6
+        Me.Column9.Name = "Column9"
+        Me.Column9.Width = 132
+        '
+        'Column7
+        '
+        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column7.HeaderText = "المجموع"
+        Me.Column7.MinimumWidth = 6
+        Me.Column7.Name = "Column7"
+        Me.Column7.Width = 96
         '
         'Label2
         '
@@ -298,97 +389,6 @@ Partial Class frmDailySales
         Me.Label7.Size = New System.Drawing.Size(41, 23)
         Me.Label7.TabIndex = 50
         Me.Label7.Text = "المجموع"
-        '
-        'Column11
-        '
-        Me.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Column11.HeaderText = "#"
-        Me.Column11.MinimumWidth = 6
-        Me.Column11.Name = "Column11"
-        Me.Column11.Width = 125
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column2.HeaderText = "ID"
-        Me.Column2.MinimumWidth = 6
-        Me.Column2.Name = "Column2"
-        Me.Column2.Visible = False
-        Me.Column2.Width = 54
-        '
-        'Column12
-        '
-        Me.Column12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column12.HeaderText = "PID"
-        Me.Column12.MinimumWidth = 6
-        Me.Column12.Name = "Column12"
-        Me.Column12.Visible = False
-        Me.Column12.Width = 64
-        '
-        'Column4
-        '
-        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Arabic Typesetting", 16.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Column4.DefaultCellStyle = DataGridViewCellStyle11
-        Me.Column4.HeaderText = "اسم الشعار "
-        Me.Column4.MinimumWidth = 6
-        Me.Column4.Name = "Column4"
-        '
-        'Column1
-        '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column1.HeaderText = "الاسم العام"
-        Me.Column1.MinimumWidth = 6
-        Me.Column1.Name = "Column1"
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column3.HeaderText = "التصنيف"
-        Me.Column3.MinimumWidth = 6
-        Me.Column3.Name = "Column3"
-        Me.Column3.Width = 99
-        '
-        'Column5
-        '
-        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column5.HeaderText = "النوع"
-        Me.Column5.MinimumWidth = 6
-        Me.Column5.Name = "Column5"
-        Me.Column5.Width = 72
-        '
-        'Column6
-        '
-        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column6.HeaderText = "الصيغة"
-        Me.Column6.MinimumWidth = 6
-        Me.Column6.Name = "Column6"
-        Me.Column6.Width = 89
-        '
-        'Column8
-        '
-        Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column8.HeaderText = "الثمن"
-        Me.Column8.MinimumWidth = 6
-        Me.Column8.Name = "Column8"
-        Me.Column8.Width = 74
-        '
-        'Column9
-        '
-        Me.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column9.HeaderText = "كمية المخزون"
-        Me.Column9.MinimumWidth = 6
-        Me.Column9.Name = "Column9"
-        Me.Column9.Width = 132
-        '
-        'Column7
-        '
-        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column7.HeaderText = "المجموع"
-        Me.Column7.MinimumWidth = 6
-        Me.Column7.Name = "Column7"
-        Me.Column7.Width = 96
         '
         'dt1
         '

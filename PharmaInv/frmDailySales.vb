@@ -42,16 +42,6 @@ Public Class frmDailySales
 
 
     End Sub
-    Function getdata(ByVal sql As String) As String
-        Try
-            cn.Open()
-            cm = New MySqlCommand(sql, cn)
-            getdata = cm.ExecuteScalar
-            cn.Close()
-        Catch ex As Exception
-            MsgBox(ex.Message)
 
-        End Try
-    End Function
 
 End Class

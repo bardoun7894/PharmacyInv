@@ -25,6 +25,17 @@ Module Module1
             dr.Close()
         End Try
     End Function
+    Function getdata(ByVal sql As String) As String
+        Try
+            cn.Open()
+            cm = New MySqlCommand(sql, cn)
+            getdata = cm.ExecuteScalar
+            cn.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+
+        End Try
+    End Function
     Public Sub Connection()
         ' Dim cn As New MySqlConnection("server=localhost;user id=root;database=dbphar")
         cn = New MySqlConnection
