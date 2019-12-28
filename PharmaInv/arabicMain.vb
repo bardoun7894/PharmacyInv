@@ -67,9 +67,17 @@
             Panel3.Controls.Clear()
             Panel3.Controls.Add(frmRecords)
             .BringToFront()
-
-
             .Show()
         End With
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        With frmManageUserAccount
+            .loadUserList()
+            .ShowDialog()
+        End With
+    End Sub
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
     End Sub
 End Class

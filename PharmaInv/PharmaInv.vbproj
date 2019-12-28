@@ -121,6 +121,12 @@
     <Compile Include="arabicMain.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmChangePassword.Designer.vb">
+      <DependentUpon>frmChangePassword.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmChangePassword.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmChooseDiscount.Designer.vb">
       <DependentUpon>frmChooseDiscount.vb</DependentUpon>
     </Compile>
@@ -191,6 +197,18 @@
       <DependentUpon>frmClassificationList.vb</DependentUpon>
     </Compile>
     <Compile Include="frmClassificationList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoginPage.Designer.vb">
+      <DependentUpon>frmLoginPage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLoginPage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageUserAccount.Designer.vb">
+      <DependentUpon>frmManageUserAccount.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageUserAccount.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmProduct.Designer.vb">
@@ -286,6 +304,9 @@
     <EmbeddedResource Include="arabicMain.resx">
       <DependentUpon>arabicMain.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChooseDiscount.resx">
       <DependentUpon>frmChooseDiscount.vb</DependentUpon>
     </EmbeddedResource>
@@ -321,6 +342,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmClassificationList.resx">
       <DependentUpon>frmClassificationList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLoginPage.resx">
+      <DependentUpon>frmLoginPage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageUserAccount.resx">
+      <DependentUpon>frmManageUserAccount.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProduct.resx">
       <DependentUpon>frmProduct.vb</DependentUpon>

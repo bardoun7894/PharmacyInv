@@ -54,11 +54,12 @@ Public Class frmProductList
         End If
     End Sub
     'هذه الدالة خاصة بالارشيف
+    'FIRST button المخزون
     Sub searchRecords(ByVal cboFilter As String, ByVal txtSearch As String, ByRef rcount As String, ByRef icount As String)
         If ConnectionState.Open Then cn.Close()
         Try
             Dim stock As Double = 0
-
+            Dim r As Integer = 0
             Dim i As Integer = 0
             dataGridView2.Rows.Clear()
             Dim tc As String = ""
@@ -100,11 +101,15 @@ Public Class frmProductList
             For i = 0 To dataGridView2.Rows.Count - 1
                 If dataGridView2.Rows(i).Cells(10).Value.ToString <> String.Empty Then
                     stock += CDbl(dataGridView2.Rows(i).Cells(10).Value.ToString)
-                    rcount = dataGridView2.Rows.Count
+                    r = dataGridView2.Rows.Count
+                    rcount = r
+                    icount = stock
                 End If
-                icount = stock
-
             Next
+            If dataGridView2.Rows.Count = 0 Then
+                rcount = 0
+                icount = 0
+            End If
 
             cn.Close()
 
@@ -117,6 +122,7 @@ Public Class frmProductList
 
 
     End Sub
+    'third button نفاذ المخزون
     Sub criticalStock(ByVal cboStock As String, ByRef icount As String, ByRef rcount As String)
         If ConnectionState.Open Then cn.Close()
 
@@ -143,8 +149,8 @@ Public Class frmProductList
 
             If tc = "underStock" Then cm = New MySqlCommand("SELECT * FROM  `tblproduct` as p INNER JOIN tblbrand as b on p.bid=b.id INNER JOIN tblclassification as c on p.cid =c.id INNER JOIN tblformulation as f on p.fid=f.id INNER JOIN tblgeneric as g on p.gid=g.id INNER JOIN tbltype as t on p.tid=t.id where qty <= reorder and qty <> 0", cn)
 
-
-                dr = cm.ExecuteReader()
+            If tc = "" Then Return
+            dr = cm.ExecuteReader()
 
             While dr.Read()
                 i += 1
@@ -162,8 +168,13 @@ Public Class frmProductList
                     rcount = dataGridView2.Rows.Count
                 End If
                 icount = stock
-            Next
 
+
+            Next
+            If dataGridView2.Rows.Count = 0 Then
+                rcount = 0
+                icount = 0
+            End If
             cn.Close()
 
         Catch ex As Exception
@@ -176,7 +187,7 @@ Public Class frmProductList
 
 
     End Sub
-
+    ' product main المنتجات
     Sub loadRecords()
         If ConnectionState.Open Then cn.Close()
         Try
@@ -205,7 +216,9 @@ Public Class frmProductList
                 End If
                 txtCount.Text = stock
             Next
-
+            If dataGridView2.Rows.Count = 0 Then
+                txtCount.Text = 0
+            End If
             cn.Close()
         Catch ex As Exception
             MsgBox(ex.Message)

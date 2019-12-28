@@ -76,6 +76,7 @@ Partial Class frmSales
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.lblTotal = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.Panel1.SuspendLayout()
         CType(Me.pictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -85,6 +86,7 @@ Partial Class frmSales
         Me.Panel12.SuspendLayout()
         Me.Panel13.SuspendLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel5.SuspendLayout()
         CType(Me.dataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -345,6 +347,7 @@ Partial Class frmSales
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(171, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.Panel5.Controls.Add(Me.LinkLabel1)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel5.Location = New System.Drawing.Point(0, 755)
         Me.Panel5.Name = "Panel5"
@@ -667,6 +670,16 @@ Partial Class frmSales
         Me.Label3.Text = "الاجمالي  "
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.Location = New System.Drawing.Point(1374, 16)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(107, 17)
+        Me.LinkLabel1.TabIndex = 0
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "...اضغط هنا للخروج "
+        '
         'frmSales
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -711,6 +724,8 @@ Partial Class frmSales
         Me.Panel13.ResumeLayout(False)
         Me.Panel13.PerformLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
         CType(Me.dataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
@@ -769,4 +784,5 @@ Partial Class frmSales
     Friend WithEvents Panel3 As Panel
     Friend WithEvents lblTotal As Label
     Friend WithEvents Label3 As Label
+    Friend WithEvents LinkLabel1 As LinkLabel
 End Class

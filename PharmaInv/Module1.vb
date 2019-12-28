@@ -9,7 +9,12 @@ Module Module1
     Public cn As MySqlConnection
     Public cm As New MySqlCommand
     Public dr As MySqlDataReader
-    Public strUser As String = "mohamed bardouni "  'this is for user we code it later
+    Public strUser As String = ""
+    Public strPass As String = ""
+    Public strUserType As String = ""
+    Public strName As String = ""
+    Public strStatus As String = ""
+
     Public Function getVat()
         Try
             cn.Open()

@@ -93,7 +93,6 @@ Public Class frmSales
         lblDue.Text = Format(s, "#,##0.00")
         txtDisplayTotal.Text = lblDue.Text
         btnDisc.Enabled = True
-
     End Sub
     Function getInvoiceNo() As String
         Try
@@ -218,7 +217,8 @@ tblformulation as f on p.fid=f.id INNER JOIN tblgeneric as g on p.gid=g.id INNER
         End With
     End Sub
 
-    Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        Me.Dispose()
 
     End Sub
 End Class
