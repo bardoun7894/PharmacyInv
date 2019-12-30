@@ -53,6 +53,16 @@ Namespace My
                 Return defaultInstance
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=root;database=pharma;allowuservariables=True")>  _
+        Public ReadOnly Property pharmaConnectionString() As String
+            Get
+                Return CType(Me("pharmaConnectionString"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

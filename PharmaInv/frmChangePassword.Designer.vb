@@ -138,11 +138,11 @@ Partial Class frmChangePassword
         'label1
         '
         Me.label1.AutoSize = True
-        Me.label1.Font = New System.Drawing.Font("Arabic Typesetting", 13.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label1.Font = New System.Drawing.Font("Arial", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label1.ForeColor = System.Drawing.Color.White
-        Me.label1.Location = New System.Drawing.Point(415, 9)
+        Me.label1.Location = New System.Drawing.Point(395, 4)
         Me.label1.Name = "label1"
-        Me.label1.Size = New System.Drawing.Size(100, 27)
+        Me.label1.Size = New System.Drawing.Size(132, 27)
         Me.label1.TabIndex = 4
         Me.label1.Text = "تغيير كلمة السر"
         '

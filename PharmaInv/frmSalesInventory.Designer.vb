@@ -32,26 +32,26 @@ Partial Class frmSalesInventory
         Me.dt2 = New System.Windows.Forms.DateTimePicker()
         Me.dt1 = New System.Windows.Forms.DateTimePicker()
         Me.dataGridView2 = New System.Windows.Forms.DataGridView()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtSubTotal = New System.Windows.Forms.TextBox()
-        Me.txtVat = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtSales = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtTotal = New System.Windows.Forms.TextBox()
         Me.txtDiscount = New System.Windows.Forms.TextBox()
+        Me.txtTotal = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtSales = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txtVat = New System.Windows.Forms.TextBox()
+        Me.txtSubTotal = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         CType(Me.dataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -124,6 +124,7 @@ Partial Class frmSalesInventory
         Me.dt1.Name = "dt1"
         Me.dt1.Size = New System.Drawing.Size(287, 30)
         Me.dt1.TabIndex = 41
+        Me.dt1.Value = New Date(2019, 12, 1, 0, 0, 0, 0)
         '
         'dataGridView2
         '
@@ -168,60 +169,13 @@ Partial Class frmSalesInventory
         Me.dataGridView2.Size = New System.Drawing.Size(1434, 631)
         Me.dataGridView2.TabIndex = 34
         '
-        'Column5
+        'Column11
         '
-        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column5.HeaderText = "المستخدم"
-        Me.Column5.MinimumWidth = 6
-        Me.Column5.Name = "Column5"
-        Me.Column5.Width = 106
-        '
-        'Column8
-        '
-        Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column8.HeaderText = "التاريخ"
-        Me.Column8.MinimumWidth = 6
-        Me.Column8.Name = "Column8"
-        Me.Column8.Width = 81
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column3.HeaderText = "المبلغ المستحق"
-        Me.Column3.MinimumWidth = 6
-        Me.Column3.Name = "Column3"
-        Me.Column3.Width = 147
-        '
-        'Column4
-        '
-        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column4.HeaderText = "التخفيضات"
-        Me.Column4.MinimumWidth = 6
-        Me.Column4.Name = "Column4"
-        Me.Column4.Width = 115
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column2.HeaderText = "القيمة المضافة"
-        Me.Column2.MinimumWidth = 6
-        Me.Column2.Name = "Column2"
-        Me.Column2.Width = 145
-        '
-        'Column1
-        '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column1.HeaderText = "المبلغ الاجمالي"
-        Me.Column1.MinimumWidth = 6
-        Me.Column1.Name = "Column1"
-        Me.Column1.Width = 142
-        '
-        'Column10
-        '
-        Me.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column10.HeaderText = "رقم الفاتورة"
-        Me.Column10.MinimumWidth = 6
-        Me.Column10.Name = "Column10"
+        Me.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Column11.HeaderText = "#"
+        Me.Column11.MinimumWidth = 6
+        Me.Column11.Name = "Column11"
+        Me.Column11.Width = 125
         '
         'Column6
         '
@@ -231,13 +185,60 @@ Partial Class frmSalesInventory
         Me.Column6.Visible = False
         Me.Column6.Width = 125
         '
-        'Column11
+        'Column10
         '
-        Me.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Column11.HeaderText = "#"
-        Me.Column11.MinimumWidth = 6
-        Me.Column11.Name = "Column11"
-        Me.Column11.Width = 125
+        Me.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column10.HeaderText = "رقم الفاتورة"
+        Me.Column10.MinimumWidth = 6
+        Me.Column10.Name = "Column10"
+        '
+        'Column1
+        '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column1.HeaderText = "المبلغ الاجمالي"
+        Me.Column1.MinimumWidth = 6
+        Me.Column1.Name = "Column1"
+        Me.Column1.Width = 142
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column2.HeaderText = "القيمة المضافة"
+        Me.Column2.MinimumWidth = 6
+        Me.Column2.Name = "Column2"
+        Me.Column2.Width = 145
+        '
+        'Column4
+        '
+        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column4.HeaderText = "التخفيضات"
+        Me.Column4.MinimumWidth = 6
+        Me.Column4.Name = "Column4"
+        Me.Column4.Width = 115
+        '
+        'Column3
+        '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column3.HeaderText = "المبلغ المستحق"
+        Me.Column3.MinimumWidth = 6
+        Me.Column3.Name = "Column3"
+        Me.Column3.Width = 147
+        '
+        'Column8
+        '
+        Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column8.HeaderText = "التاريخ"
+        Me.Column8.MinimumWidth = 6
+        Me.Column8.Name = "Column8"
+        Me.Column8.Width = 81
+        '
+        'Column5
+        '
+        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column5.HeaderText = "المستخدم"
+        Me.Column5.MinimumWidth = 6
+        Me.Column5.Name = "Column5"
+        Me.Column5.Width = 106
         '
         'Panel3
         '
@@ -258,102 +259,19 @@ Partial Class frmSalesInventory
         Me.Panel3.Size = New System.Drawing.Size(1459, 55)
         Me.Panel3.TabIndex = 62
         '
-        'Label6
+        'txtDiscount
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Arabic Typesetting", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.DimGray
-        Me.Label6.Location = New System.Drawing.Point(692, 3)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(76, 23)
-        Me.Label6.TabIndex = 56
-        Me.Label6.Text = "المبلغ الاجمالي"
-        '
-        'txtSubTotal
-        '
-        Me.txtSubTotal.BackColor = System.Drawing.Color.LemonChiffon
-        Me.txtSubTotal.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtSubTotal.Font = New System.Drawing.Font("A GOOGLE", 10.2!, System.Drawing.FontStyle.Bold)
-        Me.txtSubTotal.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.txtSubTotal.Location = New System.Drawing.Point(599, 2)
-        Me.txtSubTotal.Name = "txtSubTotal"
-        Me.txtSubTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.txtSubTotal.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
-        Me.txtSubTotal.Size = New System.Drawing.Size(80, 25)
-        Me.txtSubTotal.TabIndex = 57
-        Me.txtSubTotal.Text = "0.00"
-        '
-        'txtVat
-        '
-        Me.txtVat.BackColor = System.Drawing.Color.LemonChiffon
-        Me.txtVat.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtVat.Font = New System.Drawing.Font("A GOOGLE", 10.2!, System.Drawing.FontStyle.Bold)
-        Me.txtVat.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.txtVat.Location = New System.Drawing.Point(826, 1)
-        Me.txtVat.Name = "txtVat"
-        Me.txtVat.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.txtVat.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
-        Me.txtVat.Size = New System.Drawing.Size(80, 25)
-        Me.txtVat.TabIndex = 55
-        Me.txtVat.Text = "0.00"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Arabic Typesetting", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.DimGray
-        Me.Label5.Location = New System.Drawing.Point(504, 3)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(61, 23)
-        Me.Label5.TabIndex = 58
-        Me.Label5.Text = "التخفيضات"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Arabic Typesetting", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.DimGray
-        Me.Label1.Location = New System.Drawing.Point(920, 3)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(72, 23)
-        Me.Label1.TabIndex = 54
-        Me.Label1.Text = "القيمة المضافة"
-        '
-        'txtSales
-        '
-        Me.txtSales.BackColor = System.Drawing.Color.LemonChiffon
-        Me.txtSales.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtSales.Font = New System.Drawing.Font("A GOOGLE", 10.2!, System.Drawing.FontStyle.Bold)
-        Me.txtSales.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.txtSales.Location = New System.Drawing.Point(1018, 1)
-        Me.txtSales.Name = "txtSales"
-        Me.txtSales.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.txtSales.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
-        Me.txtSales.Size = New System.Drawing.Size(80, 25)
-        Me.txtSales.TabIndex = 53
-        Me.txtSales.Text = "0.00"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Arabic Typesetting", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.DimGray
-        Me.Label7.Location = New System.Drawing.Point(106, 5)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(73, 23)
-        Me.Label7.TabIndex = 60
-        Me.Label7.Text = "مجموع الفواتير"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Arabic Typesetting", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.DimGray
-        Me.Label2.Location = New System.Drawing.Point(1108, 3)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(115, 23)
-        Me.Label2.TabIndex = 52
-        Me.Label2.Text = "مجموع المبيعات اليومية"
+        Me.txtDiscount.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtDiscount.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtDiscount.Font = New System.Drawing.Font("A GOOGLE", 10.2!, System.Drawing.FontStyle.Bold)
+        Me.txtDiscount.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.txtDiscount.Location = New System.Drawing.Point(418, 1)
+        Me.txtDiscount.Name = "txtDiscount"
+        Me.txtDiscount.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.txtDiscount.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
+        Me.txtDiscount.Size = New System.Drawing.Size(80, 25)
+        Me.txtDiscount.TabIndex = 59
+        Me.txtDiscount.Text = "0.00"
         '
         'txtTotal
         '
@@ -369,19 +287,102 @@ Partial Class frmSalesInventory
         Me.txtTotal.TabIndex = 61
         Me.txtTotal.Text = "0.00"
         '
-        'txtDiscount
+        'Label2
         '
-        Me.txtDiscount.BackColor = System.Drawing.Color.LemonChiffon
-        Me.txtDiscount.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtDiscount.Font = New System.Drawing.Font("A GOOGLE", 10.2!, System.Drawing.FontStyle.Bold)
-        Me.txtDiscount.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.txtDiscount.Location = New System.Drawing.Point(418, 1)
-        Me.txtDiscount.Name = "txtDiscount"
-        Me.txtDiscount.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.txtDiscount.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
-        Me.txtDiscount.Size = New System.Drawing.Size(80, 25)
-        Me.txtDiscount.TabIndex = 59
-        Me.txtDiscount.Text = "0.00"
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Arabic Typesetting", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.DimGray
+        Me.Label2.Location = New System.Drawing.Point(1108, 3)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(115, 23)
+        Me.Label2.TabIndex = 52
+        Me.Label2.Text = "مجموع المبيعات اليومية"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Arabic Typesetting", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.DimGray
+        Me.Label7.Location = New System.Drawing.Point(106, 5)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(73, 23)
+        Me.Label7.TabIndex = 60
+        Me.Label7.Text = "مجموع الفواتير"
+        '
+        'txtSales
+        '
+        Me.txtSales.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtSales.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtSales.Font = New System.Drawing.Font("A GOOGLE", 10.2!, System.Drawing.FontStyle.Bold)
+        Me.txtSales.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.txtSales.Location = New System.Drawing.Point(1018, 1)
+        Me.txtSales.Name = "txtSales"
+        Me.txtSales.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.txtSales.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
+        Me.txtSales.Size = New System.Drawing.Size(80, 25)
+        Me.txtSales.TabIndex = 53
+        Me.txtSales.Text = "0.00"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Arabic Typesetting", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.DimGray
+        Me.Label1.Location = New System.Drawing.Point(920, 3)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(72, 23)
+        Me.Label1.TabIndex = 54
+        Me.Label1.Text = "القيمة المضافة"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Arabic Typesetting", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.DimGray
+        Me.Label5.Location = New System.Drawing.Point(504, 3)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(61, 23)
+        Me.Label5.TabIndex = 58
+        Me.Label5.Text = "التخفيضات"
+        '
+        'txtVat
+        '
+        Me.txtVat.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtVat.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtVat.Font = New System.Drawing.Font("A GOOGLE", 10.2!, System.Drawing.FontStyle.Bold)
+        Me.txtVat.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.txtVat.Location = New System.Drawing.Point(826, 1)
+        Me.txtVat.Name = "txtVat"
+        Me.txtVat.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.txtVat.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
+        Me.txtVat.Size = New System.Drawing.Size(80, 25)
+        Me.txtVat.TabIndex = 55
+        Me.txtVat.Text = "0.00"
+        '
+        'txtSubTotal
+        '
+        Me.txtSubTotal.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtSubTotal.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtSubTotal.Font = New System.Drawing.Font("A GOOGLE", 10.2!, System.Drawing.FontStyle.Bold)
+        Me.txtSubTotal.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.txtSubTotal.Location = New System.Drawing.Point(599, 2)
+        Me.txtSubTotal.Name = "txtSubTotal"
+        Me.txtSubTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.txtSubTotal.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
+        Me.txtSubTotal.Size = New System.Drawing.Size(80, 25)
+        Me.txtSubTotal.TabIndex = 57
+        Me.txtSubTotal.Text = "0.00"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Arabic Typesetting", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.DimGray
+        Me.Label6.Location = New System.Drawing.Point(692, 3)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(76, 23)
+        Me.Label6.TabIndex = 56
+        Me.Label6.Text = "المبلغ الاجمالي"
         '
         'Panel2
         '

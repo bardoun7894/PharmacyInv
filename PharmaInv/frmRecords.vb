@@ -120,4 +120,22 @@ Public Class frmRecords
         End With
     End Sub
 
+    Private Sub frmRecords_Load(sender As Object, e As EventArgs) Handles Me.Load
+        With frmSalesInventory
+
+
+
+
+            .Dock = DockStyle.Fill
+            .TopLevel = False
+            pnlSearch.Visible = False
+            .loadRecordsSales()
+            panelQtyStock.Visible = False
+            Panel2.Controls.Clear()
+            Panel2.Controls.Add(frmSalesInventory)
+            .BringToFront()
+            .Show()
+
+        End With
+    End Sub
 End Class

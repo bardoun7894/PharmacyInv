@@ -55,4 +55,9 @@ Public Class frmChooseDiscount
 
         End Try
     End Sub
+
+    Private Sub pictureBox2_Click(sender As Object, e As EventArgs) Handles pictureBox2.Click
+        Me.Dispose()
+
+    End Sub
 End Class

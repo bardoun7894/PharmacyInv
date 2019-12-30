@@ -53,10 +53,11 @@ Public Class frmQty
     Function getdata(ByVal sql As String) As String
         Try
             cn.Open()
+            cm = Nothing
+
             cm = New MySqlCommand(sql, cn)
             getdata = cm.ExecuteScalar
             cn.Close()
-
         Catch ex As Exception
             MsgBox(ex.Message)
             cn.Close()

@@ -209,4 +209,10 @@ tblformulation as f on p.fid=f.id INNER JOIN tblgeneric as g on p.gid=g.id INNER
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         loadStockByHistory()
     End Sub
+
+    Private Sub pictureBox2_Click(sender As Object, e As EventArgs) Handles pictureBox2.Click
+        Me.Dispose()
+
+
+    End Sub
 End Class

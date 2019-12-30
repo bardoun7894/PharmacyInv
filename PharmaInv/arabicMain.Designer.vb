@@ -30,10 +30,9 @@ Partial Class arabicMain
         Me.btnxcerrar = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button8 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.btnArchive = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -110,10 +109,9 @@ Partial Class arabicMain
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.Panel2.Controls.Add(Me.Button8)
-        Me.Panel2.Controls.Add(Me.Button7)
         Me.Panel2.Controls.Add(Me.Button6)
         Me.Panel2.Controls.Add(Me.Button5)
-        Me.Panel2.Controls.Add(Me.Button4)
+        Me.Panel2.Controls.Add(Me.btnArchive)
         Me.Panel2.Controls.Add(Me.Button3)
         Me.Panel2.Controls.Add(Me.Button2)
         Me.Panel2.Controls.Add(Me.Button1)
@@ -143,24 +141,6 @@ Partial Class arabicMain
         Me.Button8.Text = "خروج"
         Me.Button8.UseVisualStyleBackColor = True
         '
-        'Button7
-        '
-        Me.Button7.FlatAppearance.BorderSize = 0
-        Me.Button7.FlatAppearance.CheckedBackColor = System.Drawing.Color.Teal
-        Me.Button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button7.Font = New System.Drawing.Font("Andalus", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button7.ForeColor = System.Drawing.Color.White
-        Me.Button7.Image = CType(resources.GetObject("Button7.Image"), System.Drawing.Image)
-        Me.Button7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button7.Location = New System.Drawing.Point(3, 432)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(226, 40)
-        Me.Button7.TabIndex = 6
-        Me.Button7.Text = "اعدادات النظام         "
-        Me.Button7.UseVisualStyleBackColor = True
-        '
         'Button6
         '
         Me.Button6.FlatAppearance.BorderSize = 0
@@ -172,7 +152,7 @@ Partial Class arabicMain
         Me.Button6.ForeColor = System.Drawing.Color.White
         Me.Button6.Image = CType(resources.GetObject("Button6.Image"), System.Drawing.Image)
         Me.Button6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button6.Location = New System.Drawing.Point(3, 386)
+        Me.Button6.Location = New System.Drawing.Point(8, 455)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(226, 40)
         Me.Button6.TabIndex = 5
@@ -190,30 +170,30 @@ Partial Class arabicMain
         Me.Button5.ForeColor = System.Drawing.Color.White
         Me.Button5.Image = CType(resources.GetObject("Button5.Image"), System.Drawing.Image)
         Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button5.Location = New System.Drawing.Point(3, 340)
+        Me.Button5.Location = New System.Drawing.Point(8, 409)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(226, 40)
         Me.Button5.TabIndex = 4
         Me.Button5.Text = "تقارير"
         Me.Button5.UseVisualStyleBackColor = True
         '
-        'Button4
+        'btnArchive
         '
-        Me.Button4.FlatAppearance.BorderSize = 0
-        Me.Button4.FlatAppearance.CheckedBackColor = System.Drawing.Color.Teal
-        Me.Button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Font = New System.Drawing.Font("Andalus", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.ForeColor = System.Drawing.Color.White
-        Me.Button4.Image = CType(resources.GetObject("Button4.Image"), System.Drawing.Image)
-        Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button4.Location = New System.Drawing.Point(0, 294)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(226, 40)
-        Me.Button4.TabIndex = 3
-        Me.Button4.Text = "ارشيف"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.btnArchive.FlatAppearance.BorderSize = 0
+        Me.btnArchive.FlatAppearance.CheckedBackColor = System.Drawing.Color.Teal
+        Me.btnArchive.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnArchive.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnArchive.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnArchive.Font = New System.Drawing.Font("Andalus", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnArchive.ForeColor = System.Drawing.Color.White
+        Me.btnArchive.Image = CType(resources.GetObject("btnArchive.Image"), System.Drawing.Image)
+        Me.btnArchive.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnArchive.Location = New System.Drawing.Point(5, 363)
+        Me.btnArchive.Name = "btnArchive"
+        Me.btnArchive.Size = New System.Drawing.Size(226, 40)
+        Me.btnArchive.TabIndex = 3
+        Me.btnArchive.Text = "ارشيف"
+        Me.btnArchive.UseVisualStyleBackColor = True
         '
         'Button3
         '
@@ -227,7 +207,7 @@ Partial Class arabicMain
         Me.Button3.ForeColor = System.Drawing.Color.White
         Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
         Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button3.Location = New System.Drawing.Point(0, 156)
+        Me.Button3.Location = New System.Drawing.Point(5, 225)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(226, 40)
         Me.Button3.TabIndex = 2
@@ -245,7 +225,7 @@ Partial Class arabicMain
         Me.Button2.ForeColor = System.Drawing.Color.White
         Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
         Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button2.Location = New System.Drawing.Point(0, 202)
+        Me.Button2.Location = New System.Drawing.Point(5, 271)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(226, 40)
         Me.Button2.TabIndex = 2
@@ -263,7 +243,7 @@ Partial Class arabicMain
         Me.Button1.ForeColor = System.Drawing.Color.White
         Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button1.Location = New System.Drawing.Point(0, 248)
+        Me.Button1.Location = New System.Drawing.Point(5, 317)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(226, 40)
         Me.Button1.TabIndex = 1
@@ -333,10 +313,9 @@ Partial Class arabicMain
     Private WithEvents btnMaximizar As PictureBox
     Private WithEvents btnxcerrar As PictureBox
     Friend WithEvents Button8 As Button
-    Friend WithEvents Button7 As Button
     Friend WithEvents Button6 As Button
     Friend WithEvents Button5 As Button
-    Friend WithEvents Button4 As Button
+    Friend WithEvents btnArchive As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel3 As Panel
