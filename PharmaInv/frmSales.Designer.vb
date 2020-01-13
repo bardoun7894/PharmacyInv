@@ -51,6 +51,7 @@ Partial Class frmSales
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.btnTransaction = New System.Windows.Forms.Button()
         Me.btnProduct = New System.Windows.Forms.Button()
         Me.btnDisc = New System.Windows.Forms.Button()
@@ -76,7 +77,6 @@ Partial Class frmSales
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.lblTotal = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.Panel1.SuspendLayout()
         CType(Me.pictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -100,7 +100,7 @@ Partial Class frmSales
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1500, 45)
+        Me.Panel1.Size = New System.Drawing.Size(1400, 45)
         Me.Panel1.TabIndex = 10
         '
         'lblInvoice
@@ -127,10 +127,12 @@ Partial Class frmSales
         '
         'Panel2
         '
-        Me.Panel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.BackColor = System.Drawing.Color.Black
         Me.Panel2.Controls.Add(Me.txtDisplayTotal)
-        Me.Panel2.Location = New System.Drawing.Point(1190, 21)
+        Me.Panel2.Location = New System.Drawing.Point(1090, 21)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(298, 59)
         Me.Panel2.TabIndex = 11
@@ -150,11 +152,13 @@ Partial Class frmSales
         '
         'Panel9
         '
-        Me.Panel9.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel9.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel9.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(171, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.Panel9.Controls.Add(Me.lblSubTotal)
         Me.Panel9.Controls.Add(Me.Label8)
-        Me.Panel9.Location = New System.Drawing.Point(1192, 356)
+        Me.Panel9.Location = New System.Drawing.Point(1092, 356)
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(287, 51)
         Me.Panel9.TabIndex = 20
@@ -185,11 +189,13 @@ Partial Class frmSales
         '
         'Panel10
         '
-        Me.Panel10.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel10.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel10.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(171, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.Panel10.Controls.Add(Me.lblDisc)
         Me.Panel10.Controls.Add(Me.Label9)
-        Me.Panel10.Location = New System.Drawing.Point(1191, 407)
+        Me.Panel10.Location = New System.Drawing.Point(1091, 407)
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Size = New System.Drawing.Size(287, 51)
         Me.Panel10.TabIndex = 21
@@ -220,11 +226,13 @@ Partial Class frmSales
         '
         'Panel11
         '
-        Me.Panel11.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel11.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel11.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(171, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.Panel11.Controls.Add(Me.lblDue)
         Me.Panel11.Controls.Add(Me.Label10)
-        Me.Panel11.Location = New System.Drawing.Point(1192, 459)
+        Me.Panel11.Location = New System.Drawing.Point(1092, 459)
         Me.Panel11.Name = "Panel11"
         Me.Panel11.Size = New System.Drawing.Size(287, 51)
         Me.Panel11.TabIndex = 23
@@ -255,11 +263,13 @@ Partial Class frmSales
         '
         'Panel12
         '
-        Me.Panel12.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel12.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel12.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(171, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.Panel12.Controls.Add(Me.lblVat)
         Me.Panel12.Controls.Add(Me.Label11)
-        Me.Panel12.Location = New System.Drawing.Point(1193, 511)
+        Me.Panel12.Location = New System.Drawing.Point(1093, 511)
         Me.Panel12.Name = "Panel12"
         Me.Panel12.Size = New System.Drawing.Size(287, 51)
         Me.Panel12.TabIndex = 22
@@ -290,10 +300,12 @@ Partial Class frmSales
         '
         'Panel13
         '
-        Me.Panel13.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel13.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel13.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(149, Byte), Integer))
         Me.Panel13.Controls.Add(Me.lblTime)
-        Me.Panel13.Location = New System.Drawing.Point(1191, 666)
+        Me.Panel13.Location = New System.Drawing.Point(1091, 666)
         Me.Panel13.Name = "Panel13"
         Me.Panel13.Size = New System.Drawing.Size(290, 90)
         Me.Panel13.TabIndex = 24
@@ -320,7 +332,7 @@ Partial Class frmSales
         Me.cboFilter.Items.AddRange(New Object() {"الباركود", "اسم الشعار", "الاسم العام"})
         Me.cboFilter.Location = New System.Drawing.Point(12, 70)
         Me.cboFilter.Name = "cboFilter"
-        Me.cboFilter.Size = New System.Drawing.Size(257, 30)
+        Me.cboFilter.Size = New System.Drawing.Size(157, 30)
         Me.cboFilter.TabIndex = 25
         '
         'txtSearch
@@ -330,7 +342,7 @@ Partial Class frmSales
         Me.txtSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSearch.Location = New System.Drawing.Point(325, 70)
         Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(803, 30)
+        Me.txtSearch.Size = New System.Drawing.Size(703, 30)
         Me.txtSearch.TabIndex = 26
         '
         'PictureBox7
@@ -340,7 +352,7 @@ Partial Class frmSales
         Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
         Me.PictureBox7.Location = New System.Drawing.Point(283, 70)
         Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(30, 30)
+        Me.PictureBox7.Size = New System.Drawing.Size(0, 30)
         Me.PictureBox7.TabIndex = 15
         Me.PictureBox7.TabStop = False
         '
@@ -351,12 +363,24 @@ Partial Class frmSales
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel5.Location = New System.Drawing.Point(0, 755)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(1500, 45)
+        Me.Panel5.Size = New System.Drawing.Size(1400, 45)
         Me.Panel5.TabIndex = 27
+        '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.Location = New System.Drawing.Point(1374, 16)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(107, 17)
+        Me.LinkLabel1.TabIndex = 0
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "...اضغط هنا للخروج "
         '
         'btnTransaction
         '
-        Me.btnTransaction.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnTransaction.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnTransaction.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(171, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.btnTransaction.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(149, Byte), Integer))
         Me.btnTransaction.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(149, Byte), Integer))
@@ -366,7 +390,7 @@ Partial Class frmSales
         Me.btnTransaction.ForeColor = System.Drawing.Color.White
         Me.btnTransaction.Image = CType(resources.GetObject("btnTransaction.Image"), System.Drawing.Image)
         Me.btnTransaction.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnTransaction.Location = New System.Drawing.Point(1191, 96)
+        Me.btnTransaction.Location = New System.Drawing.Point(1091, 96)
         Me.btnTransaction.Name = "btnTransaction"
         Me.btnTransaction.Size = New System.Drawing.Size(287, 51)
         Me.btnTransaction.TabIndex = 28
@@ -376,7 +400,9 @@ Partial Class frmSales
         '
         'btnProduct
         '
-        Me.btnProduct.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnProduct.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnProduct.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(171, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.btnProduct.Enabled = False
         Me.btnProduct.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(149, Byte), Integer))
@@ -387,7 +413,7 @@ Partial Class frmSales
         Me.btnProduct.ForeColor = System.Drawing.Color.White
         Me.btnProduct.Image = CType(resources.GetObject("btnProduct.Image"), System.Drawing.Image)
         Me.btnProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnProduct.Location = New System.Drawing.Point(1191, 148)
+        Me.btnProduct.Location = New System.Drawing.Point(1091, 148)
         Me.btnProduct.Name = "btnProduct"
         Me.btnProduct.Size = New System.Drawing.Size(287, 51)
         Me.btnProduct.TabIndex = 29
@@ -397,7 +423,9 @@ Partial Class frmSales
         '
         'btnDisc
         '
-        Me.btnDisc.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnDisc.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnDisc.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(171, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.btnDisc.Enabled = False
         Me.btnDisc.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(149, Byte), Integer))
@@ -408,7 +436,7 @@ Partial Class frmSales
         Me.btnDisc.ForeColor = System.Drawing.Color.White
         Me.btnDisc.Image = CType(resources.GetObject("btnDisc.Image"), System.Drawing.Image)
         Me.btnDisc.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnDisc.Location = New System.Drawing.Point(1192, 199)
+        Me.btnDisc.Location = New System.Drawing.Point(1092, 199)
         Me.btnDisc.Name = "btnDisc"
         Me.btnDisc.Size = New System.Drawing.Size(287, 51)
         Me.btnDisc.TabIndex = 30
@@ -418,7 +446,9 @@ Partial Class frmSales
         '
         'btnSettle
         '
-        Me.btnSettle.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnSettle.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnSettle.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(171, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.btnSettle.Enabled = False
         Me.btnSettle.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(149, Byte), Integer))
@@ -429,7 +459,7 @@ Partial Class frmSales
         Me.btnSettle.ForeColor = System.Drawing.Color.White
         Me.btnSettle.Image = CType(resources.GetObject("btnSettle.Image"), System.Drawing.Image)
         Me.btnSettle.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnSettle.Location = New System.Drawing.Point(1191, 251)
+        Me.btnSettle.Location = New System.Drawing.Point(1091, 251)
         Me.btnSettle.Name = "btnSettle"
         Me.btnSettle.Size = New System.Drawing.Size(287, 51)
         Me.btnSettle.TabIndex = 31
@@ -439,7 +469,9 @@ Partial Class frmSales
         '
         'btnSales
         '
-        Me.btnSales.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnSales.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnSales.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(171, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.btnSales.Enabled = False
         Me.btnSales.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(149, Byte), Integer))
@@ -450,7 +482,7 @@ Partial Class frmSales
         Me.btnSales.ForeColor = System.Drawing.Color.White
         Me.btnSales.Image = CType(resources.GetObject("btnSales.Image"), System.Drawing.Image)
         Me.btnSales.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnSales.Location = New System.Drawing.Point(1191, 303)
+        Me.btnSales.Location = New System.Drawing.Point(1091, 303)
         Me.btnSales.Name = "btnSales"
         Me.btnSales.Size = New System.Drawing.Size(287, 51)
         Me.btnSales.TabIndex = 32
@@ -498,7 +530,7 @@ Partial Class frmSales
         Me.dataGridView2.RowHeadersVisible = False
         Me.dataGridView2.RowHeadersWidth = 51
         Me.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dataGridView2.Size = New System.Drawing.Size(1172, 610)
+        Me.dataGridView2.Size = New System.Drawing.Size(1072, 610)
         Me.dataGridView2.TabIndex = 33
         '
         'Column11
@@ -516,7 +548,7 @@ Partial Class frmSales
         Me.Column2.MinimumWidth = 6
         Me.Column2.Name = "Column2"
         Me.Column2.Visible = False
-        Me.Column2.Width = 56
+        Me.Column2.Width = 54
         '
         'Column12
         '
@@ -525,7 +557,7 @@ Partial Class frmSales
         Me.Column12.MinimumWidth = 6
         Me.Column12.Name = "Column12"
         Me.Column12.Visible = False
-        Me.Column12.Width = 66
+        Me.Column12.Width = 64
         '
         'Column10
         '
@@ -615,10 +647,12 @@ Partial Class frmSales
         '
         'Panel4
         '
-        Me.Panel4.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.Panel4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(149, Byte), Integer))
         Me.Panel4.Controls.Add(Me.lblDate)
-        Me.Panel4.Location = New System.Drawing.Point(1191, 615)
+        Me.Panel4.Location = New System.Drawing.Point(1091, 615)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(290, 51)
         Me.Panel4.TabIndex = 25
@@ -637,11 +671,13 @@ Partial Class frmSales
         '
         'Panel3
         '
-        Me.Panel3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(171, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.Panel3.Controls.Add(Me.lblTotal)
         Me.Panel3.Controls.Add(Me.Label3)
-        Me.Panel3.Location = New System.Drawing.Point(1193, 563)
+        Me.Panel3.Location = New System.Drawing.Point(1093, 563)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(287, 51)
         Me.Panel3.TabIndex = 24
@@ -670,21 +706,11 @@ Partial Class frmSales
         Me.Label3.Text = "الاجمالي  "
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'LinkLabel1
-        '
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(1374, 16)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(107, 17)
-        Me.LinkLabel1.TabIndex = 0
-        Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "...اضغط هنا للخروج "
-        '
         'frmSales
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1500, 800)
+        Me.ClientSize = New System.Drawing.Size(1400, 800)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel11)
