@@ -30,15 +30,15 @@ Partial Class arabicMain
         Me.btnxcerrar = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button8 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.btnArchive = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.btnArchive = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.btnRestaurar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -141,115 +141,6 @@ Partial Class arabicMain
         Me.Button8.Text = "خروج"
         Me.Button8.UseVisualStyleBackColor = True
         '
-        'Button6
-        '
-        Me.Button6.FlatAppearance.BorderSize = 0
-        Me.Button6.FlatAppearance.CheckedBackColor = System.Drawing.Color.Teal
-        Me.Button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button6.Font = New System.Drawing.Font("Andalus", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button6.ForeColor = System.Drawing.Color.White
-        Me.Button6.Image = CType(resources.GetObject("Button6.Image"), System.Drawing.Image)
-        Me.Button6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button6.Location = New System.Drawing.Point(8, 455)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(226, 40)
-        Me.Button6.TabIndex = 5
-        Me.Button6.Text = "حساب المستخدم         "
-        Me.Button6.UseVisualStyleBackColor = True
-        '
-        'Button5
-        '
-        Me.Button5.FlatAppearance.BorderSize = 0
-        Me.Button5.FlatAppearance.CheckedBackColor = System.Drawing.Color.Teal
-        Me.Button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Font = New System.Drawing.Font("Andalus", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.ForeColor = System.Drawing.Color.White
-        Me.Button5.Image = CType(resources.GetObject("Button5.Image"), System.Drawing.Image)
-        Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button5.Location = New System.Drawing.Point(8, 409)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(226, 40)
-        Me.Button5.TabIndex = 4
-        Me.Button5.Text = "تقارير"
-        Me.Button5.UseVisualStyleBackColor = True
-        '
-        'btnArchive
-        '
-        Me.btnArchive.FlatAppearance.BorderSize = 0
-        Me.btnArchive.FlatAppearance.CheckedBackColor = System.Drawing.Color.Teal
-        Me.btnArchive.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btnArchive.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btnArchive.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnArchive.Font = New System.Drawing.Font("Andalus", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnArchive.ForeColor = System.Drawing.Color.White
-        Me.btnArchive.Image = CType(resources.GetObject("btnArchive.Image"), System.Drawing.Image)
-        Me.btnArchive.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnArchive.Location = New System.Drawing.Point(5, 363)
-        Me.btnArchive.Name = "btnArchive"
-        Me.btnArchive.Size = New System.Drawing.Size(226, 40)
-        Me.btnArchive.TabIndex = 3
-        Me.btnArchive.Text = "ارشيف"
-        Me.btnArchive.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.FlatAppearance.CheckedBackColor = System.Drawing.Color.Teal
-        Me.Button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Andalus", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.ForeColor = System.Drawing.Color.White
-        Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
-        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button3.Location = New System.Drawing.Point(5, 225)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(226, 40)
-        Me.Button3.TabIndex = 2
-        Me.Button3.Text = "المبيعات"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatAppearance.CheckedBackColor = System.Drawing.Color.Teal
-        Me.Button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Andalus", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button2.Location = New System.Drawing.Point(5, 271)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(226, 40)
-        Me.Button2.TabIndex = 2
-        Me.Button2.Text = "المنتجات"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.Teal
-        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Andalus", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button1.Location = New System.Drawing.Point(5, 317)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(226, 40)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "الصيانة"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
@@ -275,6 +166,115 @@ Partial Class arabicMain
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(1007, 723)
         Me.Panel3.TabIndex = 3
+        '
+        'Button1
+        '
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.Teal
+        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Andalus", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button1.Location = New System.Drawing.Point(5, 317)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(226, 40)
+        Me.Button1.TabIndex = 1
+        Me.Button1.Text = "الصيانة"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatAppearance.CheckedBackColor = System.Drawing.Color.Teal
+        Me.Button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Andalus", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.White
+        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button2.Location = New System.Drawing.Point(5, 271)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(226, 40)
+        Me.Button2.TabIndex = 2
+        Me.Button2.Text = "المنتجات"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Button3.FlatAppearance.BorderSize = 0
+        Me.Button3.FlatAppearance.CheckedBackColor = System.Drawing.Color.Teal
+        Me.Button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Font = New System.Drawing.Font("Andalus", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.ForeColor = System.Drawing.Color.White
+        Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
+        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button3.Location = New System.Drawing.Point(5, 225)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(226, 40)
+        Me.Button3.TabIndex = 2
+        Me.Button3.Text = "المبيعات"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'btnArchive
+        '
+        Me.btnArchive.FlatAppearance.BorderSize = 0
+        Me.btnArchive.FlatAppearance.CheckedBackColor = System.Drawing.Color.Teal
+        Me.btnArchive.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnArchive.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnArchive.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnArchive.Font = New System.Drawing.Font("Andalus", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnArchive.ForeColor = System.Drawing.Color.White
+        Me.btnArchive.Image = CType(resources.GetObject("btnArchive.Image"), System.Drawing.Image)
+        Me.btnArchive.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnArchive.Location = New System.Drawing.Point(5, 363)
+        Me.btnArchive.Name = "btnArchive"
+        Me.btnArchive.Size = New System.Drawing.Size(226, 40)
+        Me.btnArchive.TabIndex = 3
+        Me.btnArchive.Text = "ارشيف"
+        Me.btnArchive.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.FlatAppearance.BorderSize = 0
+        Me.Button5.FlatAppearance.CheckedBackColor = System.Drawing.Color.Teal
+        Me.Button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button5.Font = New System.Drawing.Font("Andalus", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button5.ForeColor = System.Drawing.Color.White
+        Me.Button5.Image = CType(resources.GetObject("Button5.Image"), System.Drawing.Image)
+        Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button5.Location = New System.Drawing.Point(8, 409)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(226, 40)
+        Me.Button5.TabIndex = 4
+        Me.Button5.Text = "تقارير"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Button6
+        '
+        Me.Button6.FlatAppearance.BorderSize = 0
+        Me.Button6.FlatAppearance.CheckedBackColor = System.Drawing.Color.Teal
+        Me.Button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button6.Font = New System.Drawing.Font("Andalus", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button6.ForeColor = System.Drawing.Color.White
+        Me.Button6.Image = CType(resources.GetObject("Button6.Image"), System.Drawing.Image)
+        Me.Button6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button6.Location = New System.Drawing.Point(8, 455)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(226, 40)
+        Me.Button6.TabIndex = 5
+        Me.Button6.Text = "حساب المستخدم         "
+        Me.Button6.UseVisualStyleBackColor = True
         '
         'arabicMain
         '
@@ -305,18 +305,18 @@ Partial Class arabicMain
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
     Friend WithEvents PictureBox1 As PictureBox
     Private WithEvents btnRestaurar As PictureBox
     Private WithEvents btnMinimizar As PictureBox
     Private WithEvents btnMaximizar As PictureBox
     Private WithEvents btnxcerrar As PictureBox
     Friend WithEvents Button8 As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Panel3 As Panel
     Friend WithEvents Button6 As Button
     Friend WithEvents Button5 As Button
     Friend WithEvents btnArchive As Button
     Friend WithEvents Button3 As Button
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button1 As Button
 End Class

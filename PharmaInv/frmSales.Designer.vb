@@ -369,7 +369,7 @@ Partial Class frmSales
         'LinkLabel1
         '
         Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(1374, 16)
+        Me.LinkLabel1.Location = New System.Drawing.Point(1204, 19)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(107, 17)
         Me.LinkLabel1.TabIndex = 0
@@ -548,7 +548,7 @@ Partial Class frmSales
         Me.Column2.MinimumWidth = 6
         Me.Column2.Name = "Column2"
         Me.Column2.Visible = False
-        Me.Column2.Width = 54
+        Me.Column2.Width = 56
         '
         'Column12
         '
@@ -557,7 +557,7 @@ Partial Class frmSales
         Me.Column12.MinimumWidth = 6
         Me.Column12.Name = "Column12"
         Me.Column12.Visible = False
-        Me.Column12.Width = 64
+        Me.Column12.Width = 66
         '
         'Column10
         '
