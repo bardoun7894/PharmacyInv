@@ -113,7 +113,7 @@ Partial Class frmstockin
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1278, 45)
+        Me.Panel1.Size = New System.Drawing.Size(1483, 45)
         Me.Panel1.TabIndex = 9
         '
         'pictureBox2
@@ -133,7 +133,7 @@ Partial Class frmstockin
         Me.label1.AutoSize = True
         Me.label1.Font = New System.Drawing.Font("Arabic Typesetting", 19.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label1.ForeColor = System.Drawing.Color.White
-        Me.label1.Location = New System.Drawing.Point(1207, 4)
+        Me.label1.Location = New System.Drawing.Point(1412, 4)
         Me.label1.Name = "label1"
         Me.label1.Size = New System.Drawing.Size(59, 39)
         Me.label1.TabIndex = 6
@@ -149,7 +149,7 @@ Partial Class frmstockin
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1278, 751)
+        Me.TabControl1.Size = New System.Drawing.Size(1483, 753)
         Me.TabControl1.TabIndex = 1
         '
         'TabPage1
@@ -161,7 +161,7 @@ Partial Class frmstockin
         Me.TabPage1.Location = New System.Drawing.Point(4, 29)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1270, 718)
+        Me.TabPage1.Size = New System.Drawing.Size(1475, 720)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "المخزن"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -172,9 +172,9 @@ Partial Class frmstockin
         Me.Panel7.Controls.Add(Me.Panel11)
         Me.Panel7.Controls.Add(Me.Panel9)
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel7.Location = New System.Drawing.Point(735, 3)
+        Me.Panel7.Location = New System.Drawing.Point(940, 3)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(532, 712)
+        Me.Panel7.Size = New System.Drawing.Size(532, 714)
         Me.Panel7.TabIndex = 5
         '
         'Panel11
@@ -185,7 +185,7 @@ Partial Class frmstockin
         Me.Panel11.Controls.Add(Me.DataGridView4)
         Me.Panel11.Location = New System.Drawing.Point(0, 100)
         Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(532, 616)
+        Me.Panel11.Size = New System.Drawing.Size(532, 618)
         Me.Panel11.TabIndex = 2
         '
         'DataGridView4
@@ -195,6 +195,9 @@ Partial Class frmstockin
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(252, Byte), Integer), CType(CType(247, Byte), Integer))
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(221, Byte), Integer))
         Me.DataGridView4.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.DataGridView4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView4.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView4.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView4.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -269,7 +272,7 @@ Partial Class frmstockin
         Me.Panel9.Controls.Add(Me.txtSearch)
         Me.Panel9.Location = New System.Drawing.Point(0, 0)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(532, 100)
+        Me.Panel9.Size = New System.Drawing.Size(532, 102)
         Me.Panel9.TabIndex = 0
         '
         'Label7
@@ -311,7 +314,7 @@ Partial Class frmstockin
         Me.Panel6.Controls.Add(Me.Panel8)
         Me.Panel6.Location = New System.Drawing.Point(3, 3)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(729, 716)
+        Me.Panel6.Size = New System.Drawing.Size(934, 718)
         Me.Panel6.TabIndex = 4
         '
         'Panel10
@@ -323,17 +326,18 @@ Partial Class frmstockin
         Me.Panel10.Controls.Add(Me.DataGridView3)
         Me.Panel10.Location = New System.Drawing.Point(0, 100)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(729, 620)
+        Me.Panel10.Size = New System.Drawing.Size(934, 622)
         Me.Panel10.TabIndex = 1
         '
         'save
         '
+        Me.save.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.save.BackColor = System.Drawing.Color.FromArgb(CType(CType(13, Byte), Integer), CType(CType(112, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.save.FlatAppearance.BorderSize = 0
         Me.save.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.save.Font = New System.Drawing.Font("Arabic Typesetting", 16.2!, System.Drawing.FontStyle.Bold)
         Me.save.ForeColor = System.Drawing.Color.White
-        Me.save.Location = New System.Drawing.Point(626, 571)
+        Me.save.Location = New System.Drawing.Point(836, 557)
         Me.save.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.save.Name = "save"
         Me.save.Size = New System.Drawing.Size(86, 35)
@@ -348,6 +352,9 @@ Partial Class frmstockin
         DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(252, Byte), Integer), CType(CType(247, Byte), Integer))
         DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(221, Byte), Integer))
         Me.DataGridView3.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        Me.DataGridView3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView3.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView3.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -371,14 +378,14 @@ Partial Class frmstockin
         DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGridView3.DefaultCellStyle = DataGridViewCellStyle7
         Me.DataGridView3.EnableHeadersVisualStyles = False
-        Me.DataGridView3.Location = New System.Drawing.Point(4, 29)
+        Me.DataGridView3.Location = New System.Drawing.Point(18, 29)
         Me.DataGridView3.Margin = New System.Windows.Forms.Padding(4)
         Me.DataGridView3.Name = "DataGridView3"
         Me.DataGridView3.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.DataGridView3.RowHeadersVisible = False
         Me.DataGridView3.RowHeadersWidth = 51
         Me.DataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView3.Size = New System.Drawing.Size(721, 520)
+        Me.DataGridView3.Size = New System.Drawing.Size(904, 520)
         Me.DataGridView3.TabIndex = 22
         '
         'DataGridViewTextBoxColumn4
@@ -468,7 +475,7 @@ Partial Class frmstockin
         Me.Panel8.Controls.Add(Me.txtReference)
         Me.Panel8.Location = New System.Drawing.Point(-3, 7)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(732, 97)
+        Me.Panel8.Size = New System.Drawing.Size(937, 99)
         Me.Panel8.TabIndex = 0
         '
         'txtCount
@@ -476,7 +483,7 @@ Partial Class frmstockin
         Me.txtCount.BackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(190, Byte), Integer), CType(CType(196, Byte), Integer))
         Me.txtCount.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtCount.Font = New System.Drawing.Font("Arabic Typesetting", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCount.Location = New System.Drawing.Point(74, 50)
+        Me.txtCount.Location = New System.Drawing.Point(139, 49)
         Me.txtCount.Name = "txtCount"
         Me.txtCount.Size = New System.Drawing.Size(247, 35)
         Me.txtCount.TabIndex = 9
@@ -488,7 +495,7 @@ Partial Class frmstockin
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Arabic Typesetting", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(327, 50)
+        Me.Label2.Location = New System.Drawing.Point(420, 53)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(62, 32)
         Me.Label2.TabIndex = 8
@@ -499,7 +506,7 @@ Partial Class frmstockin
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Arabic Typesetting", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(287, 2)
+        Me.Label10.Location = New System.Drawing.Point(380, 5)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(102, 32)
         Me.Label10.TabIndex = 7
@@ -508,7 +515,7 @@ Partial Class frmstockin
         'sdate1
         '
         Me.sdate1.Font = New System.Drawing.Font("Arabic Typesetting", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.sdate1.Location = New System.Drawing.Point(6, 3)
+        Me.sdate1.Location = New System.Drawing.Point(99, 6)
         Me.sdate1.Name = "sdate1"
         Me.sdate1.Size = New System.Drawing.Size(287, 30)
         Me.sdate1.TabIndex = 6
@@ -518,7 +525,7 @@ Partial Class frmstockin
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Arabic Typesetting", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(651, 5)
+        Me.Label9.Location = New System.Drawing.Point(805, 6)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(78, 32)
         Me.Label9.TabIndex = 5
@@ -529,7 +536,7 @@ Partial Class frmstockin
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Arabic Typesetting", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(667, 50)
+        Me.Label8.Location = New System.Drawing.Point(821, 51)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(62, 32)
         Me.Label8.TabIndex = 4
@@ -538,7 +545,7 @@ Partial Class frmstockin
         'txtStockBy
         '
         Me.txtStockBy.Font = New System.Drawing.Font("Arabic Typesetting", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.txtStockBy.Location = New System.Drawing.Point(395, 52)
+        Me.txtStockBy.Location = New System.Drawing.Point(549, 53)
         Me.txtStockBy.Name = "txtStockBy"
         Me.txtStockBy.Size = New System.Drawing.Size(247, 30)
         Me.txtStockBy.TabIndex = 1
@@ -546,7 +553,7 @@ Partial Class frmstockin
         'txtReference
         '
         Me.txtReference.Font = New System.Drawing.Font("Arabic Typesetting", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(178, Byte))
-        Me.txtReference.Location = New System.Drawing.Point(395, 3)
+        Me.txtReference.Location = New System.Drawing.Point(549, 4)
         Me.txtReference.Name = "txtReference"
         Me.txtReference.Size = New System.Drawing.Size(247, 30)
         Me.txtReference.TabIndex = 0
@@ -564,7 +571,7 @@ Partial Class frmstockin
         Me.TabPage2.Location = New System.Drawing.Point(4, 29)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1270, 718)
+        Me.TabPage2.Size = New System.Drawing.Size(1475, 720)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "تاريخ المخزن"
         '
@@ -626,6 +633,9 @@ Partial Class frmstockin
         DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(252, Byte), Integer), CType(CType(247, Byte), Integer))
         DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(221, Byte), Integer))
         Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle8
+        Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -649,14 +659,14 @@ Partial Class frmstockin
         DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle11
         Me.DataGridView1.EnableHeadersVisualStyles = False
-        Me.DataGridView1.Location = New System.Drawing.Point(3, 70)
+        Me.DataGridView1.Location = New System.Drawing.Point(46, 69)
         Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(1267, 648)
+        Me.DataGridView1.Size = New System.Drawing.Size(1406, 609)
         Me.DataGridView1.TabIndex = 23
         '
         'DataGridViewTextBoxColumn1
@@ -760,13 +770,14 @@ Partial Class frmstockin
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1278, 796)
+        Me.ClientSize = New System.Drawing.Size(1483, 798)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmstockin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmstockin2"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.pictureBox2, System.ComponentModel.ISupportInitialize).EndInit()

@@ -56,7 +56,7 @@ Partial Class frmBrandList
         Me.Panel5.Location = New System.Drawing.Point(0, 0)
         Me.Panel5.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(1282, 49)
+        Me.Panel5.Size = New System.Drawing.Size(1366, 49)
         Me.Panel5.TabIndex = 14
         '
         'lblCount
@@ -64,7 +64,7 @@ Partial Class frmBrandList
         Me.lblCount.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblCount.AutoSize = True
         Me.lblCount.Font = New System.Drawing.Font("Arabic Typesetting", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(178, Byte))
-        Me.lblCount.Location = New System.Drawing.Point(931, 13)
+        Me.lblCount.Location = New System.Drawing.Point(1310, 9)
         Me.lblCount.Name = "lblCount"
         Me.lblCount.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.lblCount.Size = New System.Drawing.Size(43, 32)
@@ -106,9 +106,9 @@ Partial Class frmBrandList
         'Panel1
         '
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel1.Location = New System.Drawing.Point(1263, 49)
+        Me.Panel1.Location = New System.Drawing.Point(1347, 49)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(19, 700)
+        Me.Panel1.Size = New System.Drawing.Size(19, 719)
         Me.Panel1.TabIndex = 16
         '
         'dataGridView2
@@ -148,7 +148,7 @@ Partial Class frmBrandList
         Me.dataGridView2.RowHeadersVisible = False
         Me.dataGridView2.RowHeadersWidth = 51
         Me.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dataGridView2.Size = New System.Drawing.Size(1263, 700)
+        Me.dataGridView2.Size = New System.Drawing.Size(1347, 719)
         Me.dataGridView2.TabIndex = 19
         '
         'Column2
@@ -168,7 +168,7 @@ Partial Class frmBrandList
         Me.Column4.MinimumWidth = 6
         Me.Column4.Name = "Column4"
         Me.Column4.Visible = False
-        Me.Column4.Width = 54
+        Me.Column4.Width = 56
         '
         'Column3
         '
@@ -200,7 +200,7 @@ Partial Class frmBrandList
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1282, 749)
+        Me.ClientSize = New System.Drawing.Size(1366, 768)
         Me.Controls.Add(Me.dataGridView2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel5)

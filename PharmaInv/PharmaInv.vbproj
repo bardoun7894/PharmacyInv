@@ -142,6 +142,12 @@
     <Compile Include="DataSet1.vb">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="frmAdjustment.Designer.vb">
+      <DependentUpon>frmAdjustment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdjustment.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmChangePassword.Designer.vb">
       <DependentUpon>frmChangePassword.vb</DependentUpon>
     </Compile>
@@ -337,6 +343,9 @@
   <ItemGroup>
     <EmbeddedResource Include="arabicMain.resx">
       <DependentUpon>arabicMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdjustment.resx">
+      <DependentUpon>frmAdjustment.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmChangePassword.resx">
       <DependentUpon>frmChangePassword.vb</DependentUpon>

@@ -74,7 +74,7 @@ Partial Class frmBrand
         'labelId
         '
         Me.labelId.AutoSize = True
-        Me.labelId.Location = New System.Drawing.Point(300, 44)
+        Me.labelId.Location = New System.Drawing.Point(349, 44)
         Me.labelId.Name = "labelId"
         Me.labelId.Size = New System.Drawing.Size(42, 23)
         Me.labelId.TabIndex = 27

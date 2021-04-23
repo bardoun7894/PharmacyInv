@@ -5,8 +5,9 @@ Public Class frmDailySales
 
 
     Sub loadDailySales()
-        Dim sdate As String = dt1.Value.ToString("yyyy-MM-dd")
 
+
+        Dim sdate As String = dt1.Value.ToString("yyyy-MM-dd")
 
         Dim i As Integer = 0
         Try
@@ -19,7 +20,7 @@ Public Class frmDailySales
             dr = cm.ExecuteReader
             While dr.Read
                 i += 1
-               
+
                 dataGridView2.Rows.Add(i, dr.Item("id").ToString, dr.Item("pid").ToString, dr.Item("brand"), dr.Item("generic").ToString, dr.Item("classification").ToString, dr.Item("type").ToString, dr.Item("formulation").ToString, dr.Item("price").ToString, dr.Item("qty").ToString, dr.Item("total").ToString)
 
             End While
@@ -47,4 +48,5 @@ Public Class frmDailySales
         Me.Dispose()
 
     End Sub
+
 End Class

@@ -12,6 +12,10 @@
     End Sub
 
     Private Sub arabicMain_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Me.Size = Screen.PrimaryScreen.WorkingArea.Size
+        Me.WindowState = FormWindowState.Maximized
+
+
         Connection()
         btnMaximizar.Visible = False
         With frmRecords
@@ -111,5 +115,11 @@
 
     Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
 
+    End Sub
+
+    Private Sub Button4_Click_2(sender As Object, e As EventArgs) Handles Button4.Click
+        With StockAdjustement
+            .Show()
+        End With
     End Sub
 End Class

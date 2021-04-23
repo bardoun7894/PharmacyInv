@@ -19,7 +19,6 @@ Public Class frmstockin
         End Select
 
 
-
         If cboFilter.Text = String.Empty Then Return
 
 
@@ -214,5 +213,10 @@ tblformulation as f on p.fid=f.id INNER JOIN tblgeneric as g on p.gid=g.id INNER
         Me.Dispose()
 
 
+    End Sub
+
+    Private Sub frmstockin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Me.Size = Screen.PrimaryScreen.WorkingArea.Size
     End Sub
 End Class

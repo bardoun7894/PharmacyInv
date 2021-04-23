@@ -75,7 +75,6 @@ Partial Class frmDailySales
         '
         'pictureBox2
         '
-        Me.pictureBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.pictureBox2.Image = CType(resources.GetObject("pictureBox2.Image"), System.Drawing.Image)
         Me.pictureBox2.Location = New System.Drawing.Point(16, 4)
         Me.pictureBox2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
@@ -87,6 +86,7 @@ Partial Class frmDailySales
         '
         'label1
         '
+        Me.label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.label1.AutoSize = True
         Me.label1.Font = New System.Drawing.Font("Arabic Typesetting", 19.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label1.ForeColor = System.Drawing.Color.White
@@ -257,6 +257,7 @@ Partial Class frmDailySales
         '
         'lblDate
         '
+        Me.lblDate.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblDate.AutoSize = True
         Me.lblDate.Font = New System.Drawing.Font("Arabic Typesetting", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDate.Location = New System.Drawing.Point(1176, 54)
@@ -267,6 +268,7 @@ Partial Class frmDailySales
         '
         'txtSales
         '
+        Me.txtSales.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtSales.BackColor = System.Drawing.Color.LemonChiffon
         Me.txtSales.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtSales.Font = New System.Drawing.Font("A GOOGLE", 10.2!, System.Drawing.FontStyle.Bold)
@@ -281,6 +283,7 @@ Partial Class frmDailySales
         '
         'Label3
         '
+        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Arabic Typesetting", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.DimGray
@@ -292,6 +295,7 @@ Partial Class frmDailySales
         '
         'txtVat
         '
+        Me.txtVat.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtVat.BackColor = System.Drawing.Color.LemonChiffon
         Me.txtVat.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtVat.Font = New System.Drawing.Font("A GOOGLE", 10.2!, System.Drawing.FontStyle.Bold)
@@ -306,6 +310,7 @@ Partial Class frmDailySales
         '
         'Label4
         '
+        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Arabic Typesetting", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.DimGray
@@ -317,6 +322,7 @@ Partial Class frmDailySales
         '
         'txtDiscount
         '
+        Me.txtDiscount.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtDiscount.BackColor = System.Drawing.Color.LemonChiffon
         Me.txtDiscount.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtDiscount.Font = New System.Drawing.Font("A GOOGLE", 10.2!, System.Drawing.FontStyle.Bold)
@@ -331,6 +337,7 @@ Partial Class frmDailySales
         '
         'Label5
         '
+        Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Arabic Typesetting", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.DimGray
@@ -342,6 +349,7 @@ Partial Class frmDailySales
         '
         'txtSubTotal
         '
+        Me.txtSubTotal.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtSubTotal.BackColor = System.Drawing.Color.LemonChiffon
         Me.txtSubTotal.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtSubTotal.Font = New System.Drawing.Font("A GOOGLE", 10.2!, System.Drawing.FontStyle.Bold)
@@ -356,6 +364,7 @@ Partial Class frmDailySales
         '
         'Label6
         '
+        Me.Label6.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Arabic Typesetting", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.DimGray
@@ -367,6 +376,7 @@ Partial Class frmDailySales
         '
         'txtTotal
         '
+        Me.txtTotal.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.txtTotal.BackColor = System.Drawing.Color.LemonChiffon
         Me.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtTotal.Font = New System.Drawing.Font("A GOOGLE", 10.2!, System.Drawing.FontStyle.Bold)
@@ -381,6 +391,7 @@ Partial Class frmDailySales
         '
         'Label7
         '
+        Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Arabic Typesetting", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.DimGray
@@ -392,6 +403,7 @@ Partial Class frmDailySales
         '
         'dt1
         '
+        Me.dt1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dt1.Location = New System.Drawing.Point(891, 59)
         Me.dt1.Name = "dt1"
         Me.dt1.Size = New System.Drawing.Size(257, 22)
@@ -420,6 +432,7 @@ Partial Class frmDailySales
         Me.Controls.Add(Me.panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmDailySales"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmDailySales"
         Me.panel1.ResumeLayout(False)
         Me.panel1.PerformLayout()
